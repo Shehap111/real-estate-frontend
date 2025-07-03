@@ -1,10 +1,13 @@
-import React from 'react'
+'use client';
+import React, { Suspense } from 'react';
 import FilteredProperties from './FilteredProperties'
 
 const page = () => {
   return (
     <div>
-      <FilteredProperties/>      
+     <Suspense fallback={<div>Loading...</div>}>
+      <FilteredProperties/>     
+     </Suspense>
     </div>
   )
 }
