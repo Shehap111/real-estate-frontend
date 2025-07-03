@@ -1,0 +1,269 @@
+:root {
+    /* 🎨 Base Colors */
+    --white: #ffffff;
+    --black: #000000;
+
+    /* 🌍 Backgrounds */
+    --main-bg-color: var(--white);
+    /* خلفية الصفحات */
+    --section-bg-color: #f5f7f9;
+    /* خلفية الأقسام */
+    --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.227);
+    /* شادو الكروت */
+
+    /* 🖍️ Text */
+    --heading-color: #1a1668;
+    /* عناوين */
+    --paragraph-color: #666666;
+    /* نصوص عادية */
+
+    /* 🎯 Primary Theme */
+    --primary-color: #040134;
+    /* الأزرار والـ CTAs */
+    --primary-text-color: var(--white);
+    /* لون الخط على الزر الأساسي */
+
+    /* 🎨 Accent Colors */
+    --accent-green: #07a169;
+    /* لون مساعد - أخضر */
+    --accent-yellow: #ffb800;
+    /* لون مساعد - أصفر */
+
+    /* 🧱 Borders */
+    --main-border: 1px solid rgba(139, 139, 139, 0.31);
+    /* لون حدود ناعم */
+}
+/* [data-theme="Dark"] {
+    --mainBgColor: #1f1f1f;
+    --hColor: #100303;
+    --textColor: #ffffff;
+    --btnColor: rgba(255, 255, 255, 0.08);
+    --hColor: #ffffff;
+    --pColor: #aba8a8;
+    --bgColor: #2e2e2e;
+    --mainBorder: 1px solid #6666664e;
+    --boxShadow: #efe4e4 1px 1px 5px;
+    --secondColor: #0084d6;
+    --thirdColor: #ffb800;
+
+} */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--mainBgColor);
+    box-shadow: var(--boxShadow);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--textColor);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    opacity: .6;
+}
+
+
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0 !important;
+}
+
+a {
+    text-decoration: none !important; }
+
+
+
+.btn_style{
+  padding: 10px 30px;
+  color: var(--section-bg-color);
+  border: 1px solid var(--accent-green);
+  border-radius: 5px;
+  background-color: var(--accent-green);
+  transition: all linear .2s;
+  text-align: center;
+  width: 200px;
+  display: block;
+  margin: auto;
+  margin-top: 30px;  
+}
+.btn_style:hover{
+  background-color: transparent;
+  color: var(--heading-color);
+}    
+
+
+.intro_section {
+    background-image: url(../../public/images/main-slider-3-1.webp);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.intro_section::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000005b;
+    
+}
+.intro_section .shaps .intro_shap2{
+    left: 30px;
+    bottom: 10%;
+    position: absolute;
+    width: 70px !important;
+    animation: shaps_scails 3s ease-in-out infinite;
+}
+.intro_section .shaps .intro_shap1{ 
+    width: 50px !important;
+    position: absolute;
+    right: 20%;
+    top: 40%  ;
+    animation: shaps_scails 3s ease-in-out infinite;
+}
+.intro {
+    z-index: 554;
+}
+
+.intro_section h1 {
+    font-size: 65px;
+    color: var(--primary-text-color);
+    margin-top: 20px;
+}
+
+.intro_section ul {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.intro_section ul li {
+    margin: 0px 10px;
+    color: var(--section-bg-color);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all ease-in .3s;
+}
+
+.intro_section ul a {
+    color: var(--btnColor);
+
+}
+
+.intro_section ul li:hover {
+    opacity: .5;
+}
+.intro {
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+}
+.intro h3{
+    font-size: 32px;
+    color: var(--primary-color);
+}
+.intro p{
+    color: var(--paragraph-color);
+    padding: 20px 0;
+}
+.intro::after{
+    position: absolute;
+    content: '';
+    bottom: 25px;
+    left: calc(50% - 100px);
+    background-color: #ffb800;
+    width: 0px;
+    height: 2px;
+    transition: all ease-in-out .2s;
+}
+.intro:hover::after{
+    width: 200px;
+} 
+
+
+.Scroll_To_top {
+    transition: all ease-in-out 1s;
+    animation-name: tranz2;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition: all ease-in .3s;
+    background-color: var(--btnColor) !important;
+}
+
+.Scroll_To_top:hover {
+    opacity: .7;
+}
+
+@keyframes tranz2 {
+    0% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.border_style {
+    height: 30px;
+    overflow: hidden;
+    margin: 10px 0;
+    color: #000;
+    position: relative;
+    display: inline-block !important;
+    transition: all ease-in-out .3s;
+}
+
+.border_style::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--secondColor);
+    transition: all ease-in-out .3s;
+}
+
+.border_style:hover::after {
+    width: 100%;
+}
+.border_style:hover {
+    color: var(--secondColor);
+}
+
+@keyframes shaps_scails {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}

@@ -9,8 +9,36 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.1",
+    "@reduxjs/toolkit": "^2.8.2",
+    "@tiptap/extension-image": "^2.22.3",
+    "@tiptap/extension-link": "^2.22.3",
+    "@tiptap/extension-underline": "^2.22.3",
+    "@tiptap/react": "^2.22.3",
+    "@tiptap/starter-kit": "^2.22.3",
+    "axios": "^1.10.0",
+    "bootstrap": "^5.3.7",
+    "date-fns": "^4.1.0",
+    "i18next": "^25.2.1",
+    "lodash.debounce": "^4.0.8",
+    "lucide-react": "^0.517.0",
+    "material-react-table": "^3.2.1",
+    "next": "15.3.3",
+    "next-i18next": "^15.4.2",
+    "photo-sphere-viewer": "^4.8.1",
     "react": "^19.0.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
-    "next": "15.3.3"
+    "react-i18next": "^15.5.3",
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-photo-sphere-viewer": "^6.2.3",
+    "react-pro-sidebar": "^1.1.0",
+    "react-redux": "^9.2.0",
+    "react-select": "^5.10.1",
+    "react-toastify": "^11.0.5",
+    "swiper": "^11.2.10"
   }
 }

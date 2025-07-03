@@ -1,0 +1,59 @@
+.blogs{
+    padding: 70px 0;
+    background-color: var(--section-bg-color);
+}
+.blogs .box{
+    padding: 25px ;
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    margin: 10px 0;
+    overflow: hidden;
+}
+.blogs .box .image{
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+.blogs .box .image img{
+    min-height: 100%;
+    min-width: 100%;    
+    transition: all ease-in-out 1s;
+}
+.blogs .box:hover img{
+    transform: scale(1.2) ; 
+}
+.blogs .box .content{
+    margin-top: 20px;
+    overflow: hidden;
+}
+.blogs .box .content h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+    height: 30px;
+    overflow: hidden;
+    line-height: 1.8;
+}
+.blogs .box .content span{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-yellow);
+}
+.blogs .box .content p{
+    margin: 10px 0 ;
+    height: 60px;
+    overflow: hidden;
+}
+.blogs .box .content a{
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--accent-green);
+    border-radius: 5px;
+    width: 200px;   
+    color: #fff;
+    margin-top: 20px;
+}

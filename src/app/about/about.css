@@ -1,0 +1,151 @@
+/* S1_about */
+
+.S1_about{
+    padding: 70px 0;
+    background-color: var(--mainBgColor);
+}
+.S1_about .card1{
+    position: relative;
+    background-color: var(--bgColor);
+    padding: 35px;
+}
+.line::after{
+    content: '';
+    position: absolute;
+    top: 30px;
+    border-radius: 5px;
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondColor);
+}
+.S1_about .card1 h3{
+    color: var(--textColor);
+    font-size: 28px;
+    padding: 20px 0;
+}
+.S1_about .card1 p{
+    color: var(--pColor);
+    padding: 20px 0;
+}
+/* S2_about */
+.S2_about{
+    padding: 70px 20%;
+    background-color: var(--bgColor);
+}
+.S2_about .intro{
+    padding: 20px 0;
+    text-align: center;
+}
+.S2_about .intro h3{
+    font-size: 36px;
+    color: var(--textColor);
+    padding: 20px 0;
+}
+.S2_about .intro span{
+    color: var(--textColor);
+    font-size: 15px;
+
+}
+.S2_about .intro p{
+    color: var(--pColor);
+    line-height: 1.8;
+}
+.S2_about .card{
+    border: none;
+    margin: 20px 0;
+    background-color: var(--pgColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+.S2_about .card img{
+    width: 50% !important;
+}
+.S2_about .card span{
+    color: var(--textColor);
+}
+.S2_about .card h5{
+    color: var(--textColor);
+    padding: 10px 0;
+    font-size: 24px;
+}
+/* S3_about */
+.S3_about{
+    background-color: var(--mainBgColor);
+    background-image: url(../../../public/images/main-slider-3-3.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    position: relative; 
+}
+.S3_about::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .4;
+}
+.S3_about .Follow{
+    z-index: 55;
+    background-color: var(--pgColor);
+    text-align: center;
+    height: 500px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.S3_about .Follow::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    background-color: #eaa451;
+    left: calc(50% - 50px);
+    top: 100px;
+    border-radius:5px ;
+}
+.S3_about .Follow h3{
+    font-size: 36px;
+    color: var(--section-bg-color);
+    padding: 20px 0;
+}
+.S3_about .Follow ul{
+    display: flex;
+}
+.S3_about .Follow ul li {
+    margin: 0 20px;
+}
+.S3_about .Follow ul li a{
+    color: var(--accent-yellow);
+    font-size: 24px;
+    transition: all ease-in .3s;
+}
+.S3_about .Follow ul li a:hover{
+    color: var(--section-bg-color);
+}
+.S3_about .Follow ul li svg{
+    font-size: 50px;
+}
+/*@media  */
+@media screen and (max-width: 786px){
+    .S2_about{
+        padding: 70px 10%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+       .S2_about{
+        padding: 70px 10%;
+    } 
+}

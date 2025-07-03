@@ -1,0 +1,463 @@
+.Section_1{
+    background-image: url(../../../public/images/section_1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.Section_1::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.349);
+}
+.Section_1 .box{
+    width: 70%;
+    height: 250px;
+    border-radius: 10px;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.349);
+    display: flex;
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+.Section_1 .filters {
+    width: 80%;
+    border-radius: 10px;
+}
+.Section_1 .custom__menu {
+    z-index: 9999 َ!important;  
+    background-color: #FFAF00;
+}
+.Section_1 .filters_box .filters_box_row_two{
+    align-items: center;
+    
+}
+.Section_1 .filters_box .css-13cymwt-control , .search_input  {
+   height: 40px !important;
+   border-radius: 0 !important;
+}
+.Section_1 .filters_box .css-b62m3t-container:focus{
+    box-shadow: none !important;
+    border:  none !important;
+}
+
+.Section_1 .filters_box .Select_City .css-13cymwt-control {
+    border-right: none !important;
+    border-left: none !important;
+}
+.Section_1 .Rent_Buy{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.Section_1 .operation-toggle .option {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.Section_1 .operation-toggle .option:hover {
+    background-color: #e0e0e0;
+}
+.Section_1 .btn_search{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 40px;
+    background-color: var(--accent-green);
+    
+}
+.Section_1 .operation-toggle .option.active {
+    background-color: var(--accent-green);
+    color: white;
+    border-color: var(--accent-green);
+}
+/* اللون الأساسي للسلايدر */
+.Section_1 .custom-slider .MuiSlider-track {
+    background-color: var(--accent-green);
+    /* أو أي لون يعجبك */
+}
+
+/* لون الخلفية (قبل المؤشر) */
+.Section_1 .custom-slider .MuiSlider-rail {
+    background-color: #ddd;
+}
+
+/* لون الدايرة */
+.Section_1 .custom-slider .MuiSlider-thumb {
+    background-color: var(--accent-green);
+    border: 2px solid white;
+}
+
+/* لو حابب تغير لون التولتيب اللي بيظهر */
+.Section_1 .custom-slider .MuiSlider-valueLabel {
+    background-color: var(--accent-green);
+    color: white;
+}
+
+/* تحكم في الشكل الأساسي */
+.custom-select__control {
+    height: 40px;
+    background-color: #fff;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+}
+
+.Select_City .custom-select__menu {
+    z-index: 9999 !important;
+    position: relative; }
+
+/* لما يكون فوكس أو هوفر */
+.custom-select__control--is-focused,
+.custom-select__control:hover {
+    border-color: #ccc !important;
+    box-shadow: none !important;
+}
+
+/* شيل البوردر راديوس من اليمين */
+.Select_City .custom-select__control {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* شيل فاصل السهم */
+.custom-select__indicator-separator {
+    display: none;
+}
+/* هىحعف */
+.custom__textfield .MuiInputBase-root {
+    height: 40px;
+    background-color: #fff;
+    padding-top: 4px;
+    /* بدل 0.5 */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.custom__textfield .MuiOutlinedInput-notchedOutline {
+    border-right: 1px solid #ccc;
+}
+
+.custom__textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #ccc;
+}
+
+.custom__textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #ccc;
+    border-right: none !important;
+}
+
+.custom__textfield .MuiOutlinedInput-root.Mui-focused {
+    box-shadow: none;
+    position: relative;
+    outline: none;
+    z-index: 1;
+}
+.MuiOutlinedInput-root {
+    background-color: #fff !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    box-sizing: border-box;
+    height: 40px !important;
+    overflow: hidden;
+    border-bottom-left-radius: 30px !important;
+    border-top-left-radius: 30px !important;
+  }
+  .MuiOutlinedInput-root:active{
+    background-color: transparent !important;
+  }
+.Mui-focused {
+      box-shadow: none !important;
+      border-color: transparent !important;
+      background-color: transparent !important;
+  }
+
+
+/* Section_2 */
+.Section_2{
+   padding: 70px 0; 
+}
+.Section_2 .box{
+}
+.Section_2 .box .image{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+.Section_2 .box .image img{
+    width: 100%;
+    height: 200px;
+}
+.Section_2 .box .image::before{
+    content: '';
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.553);
+    width: 100%;
+    height: 100%;
+}
+.Section_2 .box .title{
+    position: absolute;
+    z-index: 5500;
+    padding: 15px;
+    color: var(--section-bg-color);
+    backdrop-filter: blur(4px);
+    left: 10px;
+    bottom: 10px;
+    text-transform: uppercase;
+}
+/* S3_home */
+.S3_home {
+    padding: 70px 0;
+    background-image: url(../../../public/images/theme-1-bg.webp);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: var(--accent-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.S3_home .right_box_container {
+    padding: 25px;
+}
+
+.S3_home .right_box_container .box span {
+    color: #FFAF00;
+    font-size: 18px;
+}
+
+.S3_home .right_box_container .box h3 {
+    margin: 20px 0;
+    color: #fff;
+}
+
+.S3_home .right_box_container .box p {
+    color: #ccc;
+    line-height: 1.8;
+    border-left: 2px solid #FFAF00;
+    padding-left: 20px;
+}
+
+.S3_home .right_box_container .box ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.S3_home .right_box_container .img_cont {
+    margin-right: 30px;
+    width: 100px !important;
+    height: 100px !important;
+    display: flex;
+    min-width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.S3_home .right_box_container .box ul li p {
+    border-left: none;
+    padding: 0;
+}
+
+.S3_home .right_box_container .box ul li h5 {
+    padding: 0;
+    margin: 0 !important;
+    color: #fff;
+    font-size: 22px;
+}
+
+.S3_home .right_box_container .box img {
+    width: 50px !important;
+}
+
+.S3_home .right_box_container .box .btn_style {
+    background-color: #FFAF00;
+    margin-top: 20px;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+
+.S3_home .right_box_container .box .btn_style:hover {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+
+}
+.S3_home .left_box_container .box {
+    padding: 50px;
+    position: relative;
+}
+
+.S3_home .left_box_container .box .big_img img {
+    border-radius: 20px;
+    border-left: 7px solid #FFAF00;
+    border-top: 7px solid #ffb800;
+}
+
+.S3_home .left_box_container .box .small_img {
+    position: absolute;
+    width: 300px !important;
+    bottom: 0px;
+    right: 0;
+}
+.S3_home ul{
+    margin: 10px 0;
+}
+.S3_home .left_box_container .box .small_img img {
+    border-radius: 20px;
+    border-left: 7px solid #fff;
+    border-top: 7px solid #fff;
+}
+/* shaps */
+.shaps .shapeimg {
+    position: absolute;
+    width: 100px !important;
+}
+
+.shaps .shape1 {
+    bottom: 0px;
+    left: 80px;
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.shaps .shape2 {
+    right: 80px;
+    top: 30px;
+    width: 120px !important;
+    animation: floatLeftRight 3s ease-in-out infinite;
+
+}
+
+.shaps .shape3 {
+    width: 200px !important;
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.shaps .shape4 {
+    bottom: -80px;
+    right: 0;
+    width: 350px !important;
+}
+/* section 6 */
+.Section_6{
+    padding: 70px 0;
+}
+.Section_6 .box{
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Section_6 .box svg{
+    margin-bottom: 20px ;
+    color: var(--accent-yellow);
+}
+.Section_6 .box h4 span {
+    font-size: 32px !important;
+    color: var(--accent-green) !important;
+    font-weight: 600;
+}
+.Section_6 .box p{
+    font-size: 18px;
+    margin-top: 10px ;
+}
+/* section 7 */
+.Section_7{
+    background-color: #fff !important;
+    padding: 70px 0;
+}
+
+.Section_7 .box {
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background: #fff;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* هنا بنعمل البوردر المتحرك */
+.Section_7 .box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: repeating-linear-gradient(45deg,
+    var(--accent-green),
+    var(--accent-green) 10px,
+    transparent 10px,
+    transparent 20px);
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    animation: borderMove 5s linear infinite;
+    background-size: 200% 200%;
+    background-position: 0 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.Section_7 .box:hover::before {
+    opacity: 1;
+}
+
+/* الحركة */
+@keyframes borderMove {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.Section_7 .box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.Section_7 .box p {
+    font-size: 16px;
+    color: #555;
+}

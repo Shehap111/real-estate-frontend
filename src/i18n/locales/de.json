@@ -1,0 +1,176 @@
+{
+"footer": {
+  "subscribeTitle": "Abonnieren Sie, um mitzumachen!",
+  "subscribeDescription": "Abonnieren Sie, um Gutscheininformationen zu erhalten.",
+  "placeholder": "Ihre E-Mail-Adresse...",
+  "subscribeButton": "Abonnieren",
+  "getInTouch": "Kontakt aufnehmen",
+  "callUs": "Rufen Sie uns rund um die Uhr kostenlos an",
+  "address": "60, 29th Street, San Francisco, CA 94110, Vereinigte Staaten support@arostore.com",
+  "information": "Informationen",
+  "aboutUs": "Über uns",
+  "services": "Dienstleistungen",
+  "shop": "Shop",
+  "contactUs": "Kontaktieren Sie uns",
+  "privacyPolicy": "Datenschutzrichtlinie",
+  "login": "Anmelden",
+  "usefulLinks": "Nützliche Links",
+  "smartphones": "Smartphones",
+  "laptop": "Laptop",
+  "clothes": "Kleidung",
+  "fitnessEquipment": "Fitnessgeräte",
+  "campingGear": "Campingausrüstung",
+  "myAccount": "Mein Konto",
+  "orders": "Bestellungen",
+  "copyRight": "© 2025 Markenladen. Alle Rechte vorbehalten.",
+  "madeWith": "Gemacht mit",
+  "by": "von"
+},
+"home_section_1": {
+  "welcome": "Willkommen bei iStudy",
+  "headline_part1": "Entdecke",
+  "headline_highlight": "2700+",
+  "headline_part2": "Online-Kurse verfügbar weltweit",
+  "paragraph": "Lorem Ipsum ist ein Standardtext der Druck- und Satzindustrie. Beispieltext nur zur Veranschaulichung.",
+  "find_courses": "Kurse finden",
+  "happy_students": "30.000+ zufriedene Studenten weltweit",
+  "satisfied_learner": "100% zufriedene Lernende"
+},
+"home_section_3": {
+  "about_title": "Über uns",
+  "main_heading": "Ein neuer, anderer Weg zur Verbesserung Ihrer Fähigkeiten",
+  "main_paragraph": "Bildung ist eines der wichtigsten und wertvollsten Güter, die eine Person besitzen kann. Sie spielt eine entscheidende Rolle bei der Gestaltung der Zukunft",
+  "features": {
+    "flexible_classes": {
+      "title": "Flexible Kurse",
+      "description": "Die Funktion der flexiblen Kurse ermöglicht es den Studierenden, ihren Lernplan individuell anzupassen"
+    },
+    "Expert_Trainers": {
+      "title": "Experten-Trainer",
+      "description": "Alle Trainer verfügen über relevante Zertifikate und Hochschulabschlüsse, was garantiert, dass Sie von qualifizierten Experten lernen"
+    },
+    "Build_Your_Career": {
+      "title": "Karriere aufbauen",
+      "description": "Bereiten Sie sich auf Vorstellungsgespräche mit Probeinterviews, Feedback und Tipps vor, wie Sie sich selbstbewusst präsentieren können"
+    }
+  },
+  "read_more": "Mehr erfahren"
+},
+"home_section_4": {
+  "trending_courses": "Beliebte Kurse",
+  "find_your_course": "Finde deinen Kurs",
+  "discount": "20%",
+  "lessons_count": " Lektionen",
+  "enroll_now": "Jetzt anmelden",
+  "see_more": "Mehr sehen"
+},
+"home_section_6": {
+  "news_updates": "Nachrichten & Updates",
+  "latest_news": "Neueste Nachrichten",
+  "read_more": "Mehr lesen"
+},
+"nav_links": {
+  "home": "Startseite",
+  "about": "Über uns",
+  "courses": "Kurse",
+  "contact": "Kontakt",
+  "blog": "Blog"
+},
+"about_section_1": {
+  "who_we_are": {
+    "title": "Wer wir sind",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit."
+  },
+  "our_team": {
+    "subtitle": "Ein paar Worte über",
+    "title": "Unser Team",
+    "description": "Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
+  }
+},
+"cart":{
+    "emptyCart": "Dein Warenkorb ist leer.",
+  "image": "Bild",
+  "courseTitle": "Kurstitel",
+  "instructor": "Dozent",
+  "price": "Preis",
+  "actions": "Aktionen",
+  "remove": "Entfernen",
+  "clear": "Leeren",
+  "checkout": "Zur Kasse",
+  "totalPrice": "Gesamtpreis"
+},
+"checkout": {
+  "orderDetails": "Bestelldetails",
+  "studentName": "Name des Studenten",
+  "email": "E-Mail",
+  "coursesTitle": "Kurse, die du kaufst",
+  "noCourses": "Keine Kurse im Warenkorb.",
+  "totalAmount": "Gesamtbetrag"
+},
+"PaymentStatus": {
+  "loading": "Zahlungsstatus wird geladen...",
+  "retryMessage": "Bitte versuchen Sie es später erneut oder kontaktieren Sie den Support.",
+  "thankYou": "Vielen Dank für Ihren Einkauf!",
+  "success": "Zahlung erfolgreich bestätigt!",
+  "error": "Fehler bei der Zahlungsbestätigung",
+  "noConnection": "Keine Verbindung zum Server",
+  "setupError": "Einrichtungsfehler: ",
+  "errorDetails": "Fehlerdetails:  "
+},
+"class_room":{
+  "viewLesson": "Lektion anzeigen",
+  "quizzes": "Quizze",
+  "startQuiz": "Quiz starten",
+  "courseIntro": "Kurseinführung",
+  "instructor": "Dozent",  
+  "instructorBio": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore cupiditate.",
+  "resources": "Ressourcen",
+  "levels": "Level",
+  "lessons": "Lektionen",
+  "duration": "Dauer",
+  "noQuizzes": "Dieses Level hat keine Quizze",
+  "category": "Kategorie",
+  "language": "Sprache",
+  "certificate": "Zertifikat",
+  "add_to_cart": "In den Warenkorb",  
+  "add_to_Wishlist": "Zur Wunschliste hinzufügen",  
+  "lessons_Page":{
+    "Lessons_in_this_Level": "Lektionen in diesem Level"
+  },
+  "quizzes_Page":{
+    "submit_quiz": "Quiz einreichen",
+    "result": " Dein Ergebnis",    
+    "retry": "Erneut versuchen",
+    "time_is_up": "Die Zeit ist abgelaufen"
+  }
+},
+"contact": {
+  "getInTouch": "Kontakt aufnehmen",
+  "teamMessage": "Unser freundliches Team freut sich, von dir zu hören.",
+  "yourName": "Dein Name",
+  "yourEmail": "Deine E-Mail",
+  "yourMessage": "Deine Nachricht",
+  "send": "Senden",
+  "cairoOffice": "Kairo Büro",
+  "cairoAddress": "123 Kairo, Ägypten, AD 10160, EG",
+  "callUs": "Ruf uns an",
+  "emailUs": "Schreib uns",
+  "followUs": "Folge uns"
+},
+"wishlist": {
+  "underConstruction": "🚧 Seite für Favoriten ist im Aufbau",
+  "soon": "Bald kannst du hier deine Lieblingskurse speichern ♥"
+},
+"Subscriptions":{
+  "underConstruction": "🚧 Seite für Abonnements ist im Aufbau",
+  "soon": "Bald kannst du hier deine Abonnements verwalten ♥"
+}
+
+
+
+
+
+
+
+
+}

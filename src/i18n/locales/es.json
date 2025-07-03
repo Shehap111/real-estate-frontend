@@ -1,0 +1,180 @@
+{
+"footer": {
+  "subscribeTitle": "Abonnez-vous pour nous rejoindre !",
+  "subscribeDescription": "Abonnez-vous pour recevoir des coupons d'information.",
+  "placeholder": "Votre adresse e-mail...",
+  "subscribeButton": "S'abonner",
+  "getInTouch": "Contactez-nous",
+  "callUs": "Appelez-nous 24/7 gratuitement",
+  "address": "60, 29th Street, San Francisco, CA 94110, États-Unis support@arostore.com",
+  "information": "Informations",
+  "aboutUs": "À propos de nous",
+  "services": "Services",
+  "shop": "Boutique",
+  "contactUs": "Contactez-nous",
+  "privacyPolicy": "Politique de confidentialité",
+  "login": "Connexion",
+  "usefulLinks": "Liens utiles",
+  "smartphones": "Smartphones",
+  "laptop": "Ordinateur portable",
+  "clothes": "Vêtements",
+  "fitnessEquipment": "Équipements de fitness",
+  "campingGear": "Équipement de camping",
+  "myAccount": "Mon compte",
+  "orders": "Commandes",
+  "copyRight": "© 2025 boutique de marque. Tous droits réservés.",
+  "madeWith": "Fait avec",
+  "by": "par"
+},
+"home_section_1": {
+  "welcome": "Välkommen till iStudy",
+  "headline_part1": "Upptäck",
+  "headline_highlight": "2700+",
+  "headline_part2": "onlinekurser tillgängliga i världen",
+  "paragraph": "Lorem ipsum är en exempeltext som används inom tryck och design. Detta är endast ett exempel.",
+  "find_courses": "Hitta kurser",
+  "happy_students": "30K+ nöjda studenter världen över",
+  "satisfied_learner": "100% nöjda elever"
+},
+"home_section_3": {
+  "about_title": "Sobre nosotros",
+  "main_heading": "Una nueva y diferente forma de mejorar tus habilidades",
+  "main_paragraph": "La educación es uno de los activos más esenciales y valiosos que una persona puede poseer, y desempeña un papel clave en la formación del futuro",
+  "features": {
+    "flexible_classes":  {
+      "title": "Clases flexibles",
+      "description": "La función de Clases Flexibles permite a los estudiantes personalizar su horario de aprendizaje"
+    },
+    "Expert_Trainers": {
+      "title": "Entrenadores expertos",
+      "description": "Todos los entrenadores tienen certificaciones y títulos avanzados, lo que garantiza que estás aprendiendo de expertos calificados"
+    },
+  "Build_Your_Career":  {
+      "title": "Construye tu carrera",
+      "description": "Prepárate para entrevistas de trabajo con sesiones simuladas, retroalimentación y consejos sobre cómo presentarte con confianza"
+    }
+  },
+  "read_more": "Leer más"
+},
+"home_section_4": {
+  "trending_courses": "Cursos más populares",
+  "find_your_course": "Encuentra tu curso",
+  "discount": "20%",
+  "lessons_count": " Lecciones",
+  "enroll_now": "Inscribirse ahora",
+  "see_more": "Ver más"
+},
+"home_section_6": {
+  "news_updates": "Noticias y actualizaciones",
+  "latest_news": "Últimas noticias",
+  "read_more": "Leer más"
+},
+"nav_links": {
+  "home": "Inicio",
+  "about": "Acerca de",
+  "courses": "Cursos",
+  "contact": "Contacto",
+  "blog": "Blog"
+},
+"about_section_1": {
+  "who_we_are": {
+    "title": "Quiénes Somos",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit."
+  },
+  "our_team": {
+    "subtitle": "Unas palabras sobre",
+    "title": "Nuestro Equipo",
+    "description": "Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
+  }
+},
+"cart":{
+    "emptyCart": "Tu carrito está vacío.",
+  "image": "Imagen",
+  "courseTitle": "Título del curso",
+  "instructor": "Instructor",
+  "price": "Precio",
+  "actions": "Acciones",
+  "remove": "Eliminar",
+  "clear": "Vaciar",
+  "checkout": "Pagar",
+  "totalPrice": "Precio total"
+  
+},
+"checkout": {
+  "orderDetails": "Detalles del pedido",
+  "studentName": "Nombre del estudiante",
+  "email": "Correo electrónico",
+  "coursesTitle": "Cursos que estás comprando",
+  "noCourses": "No hay cursos en tu carrito.",
+  "totalAmount": "Monto total"
+},
+"PaymentStatus": {
+  "loading": "Cargando el estado del pago...",
+  "retryMessage": "Por favor, inténtalo de nuevo más tarde o contacta con soporte.",
+  "thankYou": "¡Gracias por tu compra!",
+  "success": "¡Pago confirmado con éxito!",
+  "error": "Ocurrió un error al confirmar el pago",
+  "noConnection": "Sin conexión con el servidor",
+  "setupError": "Error de configuración: ",
+  "errorDetails": "Detalles del error: "
+},
+"class_room":{
+  "viewLesson": "Ver lección",
+  "quizzes": "Cuestionarios",
+  "startQuiz": "Comenzar cuestionario",
+  "courseIntro": "Introducción al curso",
+  "instructor": "Instructor",  
+  "instructorBio": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore cupiditate.",
+  "resources": "Recursos",
+  "levels": "Niveles",
+  "lessons": "Lecciones",
+  "duration": "Duración",
+  "category": "Categoría",
+  "noQuizzes": "El nivel no contiene cuestionarios",
+  "language": "Idioma",
+  "certificate": "Certificado",
+  "add_to_cart": "Agregar al carrito", 
+  "add_to_Wishlist": "Agregar a la lista de deseos",   
+    "lesone_Page":{
+    "Lessons_in_this_Level": "Lecciones en este nivel"
+  },
+  "quizzes_Page":{
+    "submit_quiz": "Enviar cuestionario",
+    "result": "Tu resultado",    
+    "retry": "Reintentar",
+    "time_is_up": "El tiempo se ha agotado"
+  }
+  
+},
+"contact": {
+  "getInTouch": "Ponte en contacto",
+  "teamMessage": "A nuestro amable equipo le encantaría saber de ti.",
+  "yourName": "Tu nombre",
+  "yourEmail": "Tu correo electrónico",
+  "yourMessage": "Tu mensaje",
+  "send": "Enviar",
+  "cairoOffice": "Oficina de El Cairo",
+  "cairoAddress": "123 El Cairo, Egipto, AD 10160, EG",
+  "callUs": "Llámanos",
+  "emailUs": "Envíanos un correo",
+  "followUs": "Síguenos"
+},
+"wishlist": {
+  "underConstruction": "🚧 Página de favoritos en construcción",
+  "soon": "Pronto podrás guardar los cursos que te gustan aquí ♥"
+},
+"Subscriptions":{
+  "underConstruction": "🚧 Página de suscripciones en construcción",
+  "soon": "Pronto podrás gestionar tus suscripciones aquí ♥"
+}
+
+
+
+
+
+
+
+
+
+}
+

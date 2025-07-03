@@ -1,0 +1,71 @@
+.contant{
+    padding: 70px 0;
+}
+.contant  h3{
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent-yellow);
+}
+.contant button{
+    background-color: var(--accent-yellow);
+    width: 100%;
+    padding: 10px ;
+    font-weight: 800;
+}
+.contant .information{
+    margin: 70px 0;
+}
+.contant .information .box{
+    padding: 40px  20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    text-align: center;
+    height: 300px;
+    transition: all ease-in .2s;
+    margin: 20px 0;
+}
+.contant .information .box:hover{
+    transform: translateY(-20px);
+    background-color: var(--accent-green);
+    box-shadow: 1px 1px 20px rgba(0,0,0,.2);
+    color: #fff !important;
+}
+
+.contant .information .box svg{
+    font-size: 60px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #07a16837;
+    text-align: center;
+    color: var(--secondColor);
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.contant .information .box:hover svg{
+    background-color: #fff;
+    color: var(--accent-green);
+    animation: shaps_scails 1s ease-in-out infinite;
+}
+.contant .information .box .social{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contant .information .box .social svg{
+    padding: 0;
+    background-color: transparent;
+    width: 25px;
+    margin:  10px ;
+    border-radius: 0 !important;
+}
+.contant .information .box:hover .social svg {
+    color: #fff;
+    animation: none;
+}
+.information .aaa a{
+    margin: 10px 0 !important;
+    display: block;
+}

@@ -1,0 +1,51 @@
+{
+"footer": {
+  "information": "معلومات",
+  "aboutUs": "من نحن",
+  "services": "خدماتنا",
+  "shop": "كل العقارات",
+  "contactUs": "تواصل معنا",
+  "privacyPolicy": "سياسة الخصوصية",
+  "login": "تسجيل الدخول",
+
+  "usefulLinks": "روابط مهمة",
+  "apartment": "شقة",
+  "villa": "فيلا",
+  "duplex": "دوبلكس",
+  "blog": "المدونة",
+  "faq": "الأسئلة الشائعة",
+  "myAccount": "حسابي",
+  "myRequests": "طلباتي",
+
+  "getInTouch": "ابقَ على تواصل",
+  "callUs": "اتصل بنا على:",
+  "address": "موقعنا: التجمع الخامس، القاهرة، مصر",
+
+  "copyRight": "© 2025 جميع الحقوق محفوظة",
+  "madeWith": "صنع بحب",
+  "by": "بواسطة"
+},
+"Single-properties": {
+  "price": "السعر",
+  "egp": "جنيه",
+  "operation_type": "نوع العملية",
+  "rent": "إيجار",
+  "sale": "بيع",
+  "property_type": "نوع العقار",
+  "city": "المدينة",
+  "bedrooms": "غرف النوم",
+  "bathrooms": "الحمامات",
+  "area": "المساحة",
+  "rating": "التقييم",
+  "status": "الحالة",
+  "active": "مفعل",
+  "inactive": "غير مفعل",
+  "created_at": "تاريخ الإضافة",
+  "map_location": "الموقع على الخريطة",
+  "whatsapp_inquiry": "استفسار عبر واتساب"
+}
+
+
+
+
+}

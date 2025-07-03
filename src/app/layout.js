@@ -1,5 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./root.css";
+import ReduxProvider from "../redux/provider";
+import NavbarWrapper from "@/components/NavbarWrapper";
+import {ToastContainer} from "react-toastify";
+import I18nProvider from '../i18n/i18nProvider';
+import FooterWrapper from "@/components/Fotter/FooterWrapper";
+import 'photo-sphere-viewer/dist/photo-sphere-viewer.css';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +28,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <ReduxProvider>
+          <NavbarWrapper />
+          <ToastContainer />
+          <I18nProvider>{children}</I18nProvider>
+          <FooterWrapper/>
+      </ReduxProvider>
       </body>
     </html>
   );

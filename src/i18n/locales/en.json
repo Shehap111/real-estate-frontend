@@ -1,0 +1,53 @@
+{
+"footer": {
+  "information": "Information",
+  "aboutUs": "About Us",
+  "services": "Our Services",
+  "shop": "All Properties",
+  "contactUs": "Contact Us",
+  "privacyPolicy": "Privacy Policy",
+  "login": "Login",
+
+  "usefulLinks": "Useful Links",
+  "apartment": "Apartment",
+  "villa": "Villa",
+  "duplex": "Duplex",
+  "blog": "Blog",
+  "faq": "FAQ",
+  "myAccount": "My Account",
+  "myRequests": "My Requests",
+
+  "getInTouch": "Get in Touch",
+  "callUs": "Call us on:",
+  "address": "Our location: New Cairo, Egypt",
+
+  "copyRight": "© 2025 All rights reserved",
+  "madeWith": "Made with love",
+  "by": "by"
+},
+"Single-properties": {
+  "price": "Price",
+  "egp": "EGP",
+  "operation_type": "Operation Type",
+  "rent": "Rent",
+  "sale": "Sale",
+  "property_type": "Property Type",
+  "city": "City",
+  "bedrooms": "Bedrooms",
+  "bathrooms": "Bathrooms",
+  "area": "Area",
+  "rating": "Rating",
+  "status": "Status",
+  "active": "Active",
+  "inactive": "Inactive",
+  "created_at": "Created At",
+  "map_location": "Map Location",
+  "whatsapp_inquiry": "Contact via WhatsApp"
+}
+
+
+
+
+
+
+}
