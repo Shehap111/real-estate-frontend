@@ -1,5 +1,5 @@
 // src/i18n/config.js
-
+'use client'
 export const fallbackLng = 'en';
 export const languages = ['en', 'ar', 'de', 'es'];
 

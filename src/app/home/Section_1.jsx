@@ -193,43 +193,43 @@ const typeOptions = useMemo(
               </Box>
 
               <Box flex={1}>
-              <Select
-                className="Select_City"
-                classNamePrefix="custom-select"
-                options={cityOptions}
-                value={cityOptions.find(c => c.value === city)}
-                onChange={(selected) => setCity(selected?.value || null)}
-                placeholder={isRTL ? 'اختر المدينة' : 'Select City'}
-                isRtl={isRTL}
-                menuPortalTarget={document.body}
-                styles={{
-                  menuPortal: (base) => ({
-                    ...base,
-                    zIndex: 13000, // أعلى من MUI drawers/dialogs
-                  }),
-                  menu: (base) => ({
-                    ...base,
-                    zIndex: 13000, // تأكيد مضاعف جوه المنيو نفسها
-                  }),
-                }}
-            />
+  <Select
+    className="Select_City"
+    classNamePrefix="custom-select"
+    options={cityOptions}
+    value={cityOptions.find(c => c.value === city)}
+    onChange={(selected) => setCity(selected?.value || null)}
+    placeholder={isRTL ? 'اختر المدينة' : 'Select City'}
+    isRtl={isRTL}
+    menuPortalTarget={typeof window !== 'undefined' ? document.body : null}
+    styles={{
+      menuPortal: (base) => ({
+        ...base,
+        zIndex: 13000, // أعلى من MUI drawers/dialogs
+      }),
+      menu: (base) => ({
+        ...base,
+        zIndex: 13000, // تأكيد مضاعف جوه المنيو نفسها
+      }),
+    }}
+  />
+</Box>
 
-              </Box>
+<Box flex={1}>
+  <Select
+    classNamePrefix="custom-select"
+    options={typeOptions}
+    value={typeOptions.find(t => t.value === type)}
+    onChange={(selected) => setType(selected?.value || null)}
+    placeholder={isRTL ? 'نوع العقار' : 'Property Type'}
+    isRtl={isRTL}
+    menuPortalTarget={typeof window !== 'undefined' ? document.body : null}
+    styles={{
+      menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+    }}
+  />
+</Box>
 
-              <Box flex={1}>
-                <Select
-                  classNamePrefix="custom-select"
-                  options={typeOptions}
-                  value={typeOptions.find(t => t.value === type)}
-                  onChange={(selected) => setType(selected?.value || null)}
-                  placeholder={isRTL ? 'نوع العقار' : 'Property Type'}
-                  menuPortalTarget={document.body} // مهم جدا
-                  styles={{
-                    menuPortal: (base) => ({ ...base, zIndex: 9999 }),
-                  }}
-                  isRtl={isRTL}
-                />
-              </Box>
 
               <Button className='btn_search' variant="contained" onClick={handleSubmit}>
                 {isRTL ? 'بحث' : 'Search'}
