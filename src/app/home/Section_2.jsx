@@ -4,7 +4,10 @@ import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import Image from 'next/image';
 import Link from 'next/link';
+import {useTranslation} from 'react-i18next';
+
 const Section_2 = () => {
+    const {t} = useTranslation();
     const dispatch = useDispatch();
     const {list, loading, error} = useSelector((state) => state.propertyTypes)
     const language = useSelector((state) => state.language.language);
@@ -19,9 +22,9 @@ const Section_2 = () => {
 <div className='Section_2'>
 <div className="container">
 <div className="intro">
-              <h3> Explore Available Property Types </h3>
-            <p>Browse a wide range of property types to find what suits your needs — from apartments and villas to commercial spaces and lands.</p>
-          </div>         
+                  <h3>{t("home_page.home_Section_2.title")}</h3>
+                  <p>{t("home_page.home_Section_2.description")}</p>
+              </div>         
     <div className="row">
     {
         list.map((p) => {

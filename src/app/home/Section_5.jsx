@@ -6,8 +6,10 @@ import {t} from 'i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import '../blog/blogs.css'
+import {useTranslation} from 'react-i18next';
 
 const Section_5 = () => {
+    const {t} = useTranslation();
     const language = useSelector((state) => state.language.language);
     const dispatch = useDispatch();
     const {publicBlogs, loading} = useSelector((state) => state.blog);
@@ -21,9 +23,8 @@ const Section_5 = () => {
     <section className='blogs'>
       <div className='container'>
         <div className="intro">
-        <h3>Insights & Trends from the Real Estate World</h3>
-<p>Read our latest blog posts covering everything from market analysis to buying strategies and home living tips.</p>
-
+          <h3>{t("home_page.home_Section_5.title")}</h3>
+          <p>{t("home_page.home_Section_5.description")}</p>
         </div>
           <div className="row">
             {publicBlogs.length > 0 ? (
@@ -38,22 +39,25 @@ const Section_5 = () => {
                         <h4> {blog.title[language]} </h4>
                         <span> {blog.author} </span>
                         <p>{blog.description[language].slice(0, 110)}...</p>
-                        <Link href={`/blog/${blog.slug}`}> Read </Link>
+                        <Link href={`/blog/${blog.slug}`} alt={blog.title[language]}>
+                            {t("home_page.home_Section_5.read")}
+                        </Link>
                       </div>                      
                     </div>
                   </div>
                 )
               })  
             ) : (
-                    <div>
-                            No Blogs   
-                    </div>
+                <div>
+                  {t("home_page.home_Section_5.no_blogs")}
+                </div>
+
             )
               
 
             }  
           </div>      
-          <Link className='btn_style' href='/properties' alt='Top Rated Properties You Can Trust'> See More </Link>
+          <Link className='btn_style' href='/properties' alt='Top Rated Properties You Can Trust'>   {t("home_page.home_Section_5.see_more")}          </Link>
       </div>
     </section>  
   )

@@ -8,24 +8,34 @@ const S1_about = () => {
   const {t} = useTranslation();  
   return (
 <section className='S1_about'>
-    <div className='container'>
-        <div className='row'>
-            <div className='col-lg-6 card1'>
-                <span className='line'></span>
-                <h3> {t('about_section_1.who_we_are.title')} </h3>    
-                <p> {t('about_section_1.who_we_are.description')}  </p>
+  <div className='container'>
+    <div className='row'>
+      <div className='col-lg-6 card1'>
+        <span className='line'></span>
+        <h3>{t('about_section_1.who_we_are.title')}</h3>
 
-            </div>
+        <p>{t('about_section_1.who_we_are.intro')}</p>
 
-            <div className='col-lg-6'>
+        <h4>{t('about_section_1.who_we_are.sub_1_title')}</h4>
+        <p>{t('about_section_1.who_we_are.sub_1_body')}</p>
 
-            <Image width={700} height={50} className='S1about_img' src={S1about_img} alt='S1about img'/>
-            </div>
+        <h4>{t('about_section_1.who_we_are.sub_2_title')}</h4>
+        <p>{t('about_section_1.who_we_are.sub_2_body')}</p>
+      </div>
 
-
-        </div>
-    </div>          
+      <div className='col-lg-6'>
+        <Image
+          width={700}
+          height={50}
+          className='S1about_img'
+          src={S1about_img}
+          alt='S1about img'
+        />
+      </div>
+    </div>
+  </div>
 </section>
+
   )
 }
 

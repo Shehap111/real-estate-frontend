@@ -10,16 +10,28 @@ import Rating from '@mui/material/Rating';
 import { GoArrowRight } from 'react-icons/go';
 import { CircularProgress } from '@mui/material';
 import { useParams } from 'next/navigation';
+import {getAllPropertyTypes} from '@/redux/slices/propertyTypeSlice';
+import {useTranslation} from 'react-i18next';
 
 const Page = () => {
+  const {t} = useTranslation();
   const language = useSelector((state) => state.language.language);
   const { id } = useParams();
   const dispatch = useDispatch();
   const { publicProperties, loading } = useSelector((state) => state.property);
+  const { list, loading:listLoading } = useSelector((state) => state.propertyTypes);
+  const isArabic = language === 'ar';
 
   useEffect(() => {
     dispatch(getAllProperties());
-  }, [dispatch]);
+    dispatch(getAllPropertyTypes())
+  }, [dispatch , id]);
+
+  const typeName = () => {
+    const found = list.find((type) => String(type._id) === id);
+    return found?.name?.[language] ?? '';
+  };
+console.log(typeName , "typeName");
 
   const filteredPropertiesByTyps = useMemo(() => {
     return (
@@ -46,15 +58,15 @@ const Page = () => {
 
   return (
     <div>
-      <IntroSections sectionName="Rent" Link="Rent" path="rent" />
-      <section className="properties">
+<IntroSections sectionName={typeName()} Link={t("filtered_by_type.breadcrumb")} path="/properties" />
+<section className="properties">
         <div className="container">
           <div className="row">
             {filteredPropertiesByTyps.map((p) => (
               <div className="col-lg-4 col-md-6" key={p._id}>
                 <div className="box">
                   <div className="image">
-                    <Link href={`adadsads`} alt={p.title[language]}>
+                    <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                       <Image
                         src={p.images[0]}
                         alt={p.title[language]}
@@ -65,7 +77,7 @@ const Page = () => {
                     </Link>
                   </div>
                   <div className="box_contant">
-                    <Link href={`adadsads`} alt={p.title[language]}>
+                    <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                       <h4>{p.title[language]}</h4>
                     </Link>
                     <h6>{p.location[language]}</h6>
@@ -75,16 +87,24 @@ const Page = () => {
                         ${p.price.toLocaleString()}
                       </span>
                       <ul>
-                        <Rating
-                          value={p.rating}
-                          precision={0.1}
-                          readOnly
-                        />
-                      </ul>
+                  <Rating
+                  value={Number(p.rating)}
+                  precision={0.1}
+                  readOnly
+                  sx={{
+                    ...(isArabic && {
+                      transform: 'scaleX(-1)',
+                      direction: 'ltr',
+                    }),
+                    fontSize: 24,
+                    color: '#f5a623',
+                  }}
+                  />
+              </ul>
                     </div>
-                    <Link href={`adadsads`} alt={p.title[language]}>
-                      MORE DETAILS <GoArrowRight />
-                    </Link>
+                      <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
+                        {t("filtered_by_type.more_details")} <GoArrowRight />
+                      </Link>
                   </div>
                 </div>
               </div>
@@ -102,7 +122,7 @@ const Page = () => {
                       padding: '2rem 0',
                     }}
                   >
-                    😢 No properties found matching your criteria.
+                    😢 {t("filtered_by_type.no_properties")}
                   </h3>
                 </div>
               )}

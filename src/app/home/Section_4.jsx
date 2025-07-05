@@ -8,11 +8,14 @@ import Rating from '@mui/material/Rating';
 import { GoArrowRight } from 'react-icons/go';
 import { CircularProgress } from '@mui/material';
 import '../properties/properties.css'
+import {useTranslation} from 'react-i18next';
 
 const Section_4 = () => {
+      const {t} = useTranslation();
     const language = useSelector((state) => state.language.language);
     const dispatch = useDispatch();
     const {publicProperties, loading, error} = useSelector((state) => state.property);
+    const isArabic = language === 'ar';
 
 
     useEffect(() => {
@@ -31,16 +34,16 @@ const Section_4 = () => {
     <section className="properties">
     <div className="container">
     <div className="intro">
-        <h3>Top Rated Properties You Can Trust</h3>
-        <p>Discover the highest-rated properties handpicked by our community. Quality, comfort, and great locations — all in one place.</p>
-    </div>
+          <h3>{t("home_page.home_Section_4.title")}</h3>
+          <p>{t("home_page.home_Section_4.description")}</p>
+        </div>
 
       <div className="row">
         {getPropertyByRaite.slice(0,6).map((p) => (
           <div className="col-lg-4 col-md-6" key={p._id}>
             <div className="box">
               <div className="image">
-                <Link href={`adadsads`} alt={p.title[language]}>
+                <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                   <Image
                     src={p.images[0]}
                     alt={p.title[language]}
@@ -51,7 +54,7 @@ const Section_4 = () => {
                 </Link>
               </div>
               <div className="box_contant">
-                <Link href={`adadsads`} alt={p.title[language]}>
+                <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                   <h4>{p.title[language]}</h4>
                 </Link>
                 <h6>{p.location[language]}</h6>
@@ -61,21 +64,29 @@ const Section_4 = () => {
                     ${p.price.toLocaleString()}
                   </span>
                   <ul>
-                    <Rating
-                      value={p.rating}
-                      precision={0.1}
-                      readOnly
-                    />
-                  </ul>
+                  <Rating
+                  value={Number(p.rating)}
+                  precision={0.1}
+                  readOnly
+                  sx={{
+                    ...(isArabic && {
+                      transform: 'scaleX(-1)',
+                      direction: 'ltr',
+                    }),
+                    fontSize: 24,
+                    color: '#f5a623',
+                  }}
+                  />
+              </ul>
                 </div>
-                <Link href={`adadsads`} alt={p.title[language]}>
-                  MORE DETAILS <GoArrowRight />
-                </Link>
+                <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
+                    {t("home_page.home_Section_4.more_details")}
+              </Link>
               </div>
             </div>
           </div>
         ))}
-              <Link className='btn_style' href='/properties' alt='Top Rated Properties You Can Trust'> See More </Link>
+              <Link className='btn_style' href='/properties' alt='Top Rated Properties You Can Trust'> {t("home_page.home_Section_5.see_more")}  </Link>
       </div>
     </div>
   </section>

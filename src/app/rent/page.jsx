@@ -9,8 +9,10 @@ import Link from 'next/link';
 import Rating from '@mui/material/Rating';
 import { GoArrowRight } from 'react-icons/go';
 import { CircularProgress } from '@mui/material';
+import {useTranslation} from 'react-i18next';
 
 const Page = () => {
+  const {t} = useTranslation();
   const language = useSelector((state) => state.language.language);
   const dispatch = useDispatch();
   const { publicProperties, loading } = useSelector((state) => state.property);
@@ -44,15 +46,15 @@ const Page = () => {
 
   return (
     <div>
-      <IntroSections sectionName="Rent" Link="Rent" path="rent" />
-      <section className="properties">
+<IntroSections sectionName={t("rent.section_title")} Link={t("rent.section_link")} path="rent" />
+<section className="properties">
         <div className="container">
           <div className="row">
             {filteredRentProperties.map((p) => (
               <div className="col-lg-4 col-md-6" key={p._id}>
                 <div className="box">
                   <div className="image">
-                    <Link href={`adadsads`} alt={p.title[language]}>
+                    <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                       <Image
                         src={p.images[0]}
                         alt={p.title[language]}
@@ -63,7 +65,7 @@ const Page = () => {
                     </Link>
                   </div>
                   <div className="box_contant">
-                    <Link href={`adadsads`} alt={p.title[language]}>
+                    <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                       <h4>{p.title[language]}</h4>
                     </Link>
                     <h6>{p.location[language]}</h6>
@@ -80,9 +82,9 @@ const Page = () => {
                         />
                       </ul>
                     </div>
-                    <Link href={`adadsads`} alt={p.title[language]}>
-                      MORE DETAILS <GoArrowRight />
-                    </Link>
+                      <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
+                        {t("rent.more_details")} <GoArrowRight />
+                      </Link>
                   </div>
                 </div>
               </div>
@@ -92,15 +94,15 @@ const Page = () => {
               publicProperties.length > 0 &&
               filteredRentProperties.length === 0 && (
                 <div className="no-matches">
-                  <h3
-                    style={{
-                      textAlign: 'center',
-                      width: '100%',
-                      padding: '2rem 0',
-                    }}
-                  >
-                    😢 No properties found for rent.
-                  </h3>
+<h3
+  style={{
+    textAlign: 'center',
+    width: '100%',
+    padding: '2rem 0',
+  }}
+>
+  😢 {t("rent.no_properties")}
+</h3>
                 </div>
               )}
           </div>

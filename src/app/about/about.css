@@ -7,25 +7,32 @@
 .S1_about .card1{
     position: relative;
     background-color: var(--bgColor);
-    padding: 35px;
+    padding: 15px;
 }
-.line::after{
+.line{
     content: '';
     position: absolute;
     top: 30px;
     border-radius: 5px;
     width: 100px;
-    height: 3px;
-    background-color: var(--secondColor);
+    height: 4px;
+    top: -10px;
+    z-index: 888888;
+    background-color: var(--accent-green);
 }
 .S1_about .card1 h3{
-    color: var(--textColor);
-    font-size: 28px;
+    font-size: 30px;
     padding: 20px 0;
+    color: var(--accent-yellow);
 }
 .S1_about .card1 p{
     color: var(--pColor);
     padding: 20px 0;
+    line-height: 1.8;
+}
+.S1_about .card1 h4{
+    color: var(--accent-green);
+    font-size: 24px;
 }
 /* S2_about */
 .S2_about{
@@ -58,6 +65,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px 0;
+    flex-direction: column;
 }
 .S2_about .card img{
     width: 50% !important;
@@ -142,6 +150,14 @@
     .S2_about{
         padding: 70px 10%;
     }
+ .S3_about .Follow ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .S3_about .Follow ul li{
+        margin: 20px;
+    }
+    
 }
 
 @media screen and (min-width:768px) and (max-width:1023px) {

@@ -16,8 +16,10 @@ import {getAllPropertyTypes} from '@/redux/slices/propertyTypeSlice'
 import {getAllCities} from '@/redux/slices/citySlice'
 import PropertyDetails from './PropertyDetails'
 import { Box } from '@mui/material'
+import {useTranslation} from 'react-i18next'
 
 const page = () => {
+  const {t} = useTranslation();
   const { slug } = useParams()
   const dispatch = useDispatch()
   const language = useSelector((state) => state.language.language)
@@ -62,8 +64,11 @@ console.log("typeName" , typeName);
     
   return (
     <div>
-      <IntroSections sectionName={selectedProperty?.title[language]} path="properties" Link="Properties" />
-
+<IntroSections
+  sectionName={selectedProperty?.title[language]}
+  path="/properties"
+  Link={t("single_property.breadcrumb")}
+/>
       <section className="single">
         <div className="container">
         <Box       sx={{ p: 4 , mb:5, background: '#fff', borderRadius: 3, boxShadow: 2 }}>
@@ -76,6 +81,7 @@ console.log("typeName" , typeName);
                     modules={[Thumbs, Navigation]}
                     spaceBetween={10}
                     navigation
+                    dir="rtl"  
                     thumbs={{ swiper: thumbsSwiper }}
                     className="main-slider"
                     style={{ marginBottom: '10px' }}
@@ -128,7 +134,9 @@ console.log("typeName" , typeName);
             {/* ✅ فيديو العقار */}
             {selectedProperty?.videoUrl && (
                 <div>
-                <h5 style={{ marginBottom: '10px' }}>📹 فيديو العقار</h5>
+                    <h5 style={{ marginBottom: '10px' }}>
+                      📹 {t("single_property.video")}
+                    </h5>
                 <iframe width="100%" 
                         style={{
                             width: '100%',
@@ -144,9 +152,11 @@ console.log("typeName" , typeName);
 
             {/* ✅ صورة 360 درجة */}
             {selectedProperty?.image360 && (
-                <div>
-                <h5 style={{ marginBottom: '10px' }}>🌀 عرض 360 درجة</h5>
-                <div
+                                  <div>
+                        <h5 style={{ marginBottom: '10px' }}>
+                          🌀 {t("single_property.view_360")}
+                                      </h5>
+                    <div
                     style={{
                     width: '100%',
                     height: '250px',

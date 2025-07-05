@@ -6,20 +6,21 @@ import logo from '../../public/images/logos/coursehab-high-resolution-logo-trans
 import './navbar.css';
 import { Menu, X } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
+import {useTranslation} from 'react-i18next';
 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const {t} = useTranslation();
   const navLinks = [
-    { name: "home", path: '/' },
-    { name: "about", path: '/about' },
-    { name: "Buy", path: '/buy' },
-    { name: "Rent", path: '/rent' },
-    { name: "blog", path: '/blog' },
-    { name: "contact", path: '/contact' }
+    { name: 'navigation.home', path: '/' },
+    { name: 'navigation.about', path: '/about' },
+    { name: 'navigation.buy', path: '/buy' },
+    { name: 'navigation.rent', path: '/rent' },
+    { name: 'navigation.blog', path: '/blog' },
+    { name: 'navigation.contact', path: '/contact' }
   ];
-
   return (
     <nav className="navbara">
       <div className="navbar-container">
@@ -33,7 +34,7 @@ const Navbar = () => {
         <div className="navbar-links">
           {navLinks.map(({ name, path }) => (
             <Link key={name} href={path} className="nav-link">
-              {name}
+               {t(name)}
             </Link>
           ))}
         </div>        
@@ -60,7 +61,7 @@ const Navbar = () => {
         <div className="mobile-menu">
           {navLinks.map(({ name, path }) => (
             <Link key={name} href={path} onClick={toggleMenu} className="mobile-link">
-              {name}
+                  {t(name)}
             </Link>
           ))}
           <div className="dropdown_container_phone">

@@ -107,153 +107,155 @@ const {t} = useTranslation()
     );
   
 
-  return (
-<>
-<IntroSections sectionName={'Contact Us'} path={'/contact'} Link={'Contact Us'}/>
-      
+return (
+  <>
+    <IntroSections
+      sectionName={t("contact.sectionTitle")}
+      path="/contact"
+      Link={t("contact.breadcrumb")}
+    />
 
-<section className="contant">
-<div className="container">
-<div className="row">
-    
-<div className="col-lg-6">
-    <Image src={data.logo} alt="Contact Us" width={250} height={200} className="contact-image" loading='lazy'/>  
-    <p>
-  {data?.description?.[language] ?? ''}
-</p>
-       
-</div>
+    <section className="contant">
+      <div className="container">
+        <div className="row">
+          {/* Left Section: Logo and Description */}
+          <div className="col-lg-6">
+            <Image
+              src={data.logo}
+              alt={t("contact.sectionTitle")}
+              width={250}
+              height={200}
+              className="contact-image"
+              loading="lazy"
+            />
+            <p>{data?.description?.[language] ?? ""}</p>
+          </div>
 
+          {/* Right Section: Contact Form */}
+          <div className="col-lg-6">
+            <h3>{t("contact.getInTouch")}</h3>
+            <p>{t("contact.teamMessage")}</p>
 
-<div className="col-lg-6">
-<h3> {t('contact.getInTouch')} </h3>
-<p>{t('contact.teamMessage')}</p>
-<Box   noValidate>
-<form onSubmit={handleSubmit} action="">
-<TextField
-    fullWidth
-    margin="normal"
-    label={t('contact.yourName')}
-    name="name"
-    value={form.name}
-    onChange={handleChange}
-    required
-/>
-<TextField
-    fullWidth
-    margin="normal"
-    label={t('contact.yourEmail')}
-    name="email"
-    type="email"
-    value={form.email}
-    onChange={handleChange}
-    required
-/>
-<TextField
-    fullWidth
-    margin="normal"
-    label={t('contact.yourEmail')}
-    name="phone"
-    type="phone"
-    value={form.phone}
-    onChange={handleChange}
-    required
-/>    
-<TextField
-    fullWidth
-    margin="normal"
-    label={t('contact.yourMessage')}
-    name="message"
-    value={form.message}
-    onChange={handleChange}
-    required
-    multiline
-    rows={4}
-/>
+            <Box noValidate>
+              <form onSubmit={handleSubmit} action="">
+                <TextField
+                  fullWidth
+                  margin="normal"
+                  label={t("contact.yourName")}
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                />
+                <TextField
+                  fullWidth
+                  margin="normal"
+                  label={t("contact.yourEmail")}
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                />
+                <TextField
+                  fullWidth
+                  margin="normal"
+                  label={t("contact.yourPhone")}
+                  name="phone"
+                  type="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                />
+                <TextField
+                  fullWidth
+                  margin="normal"
+                  label={t("contact.yourMessage")}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                  multiline
+                  rows={4}
+                />
 
-    <Box mt={2} textAlign="center">
-    <Button
-        type="submit"
-        variant="contained"
-        color="primary"
-        disabled={loading}
-        sx={{ px: 5, py: 1 }}
-    >
-        {loading ? <CircularProgress size={24} color="inherit" /> : t('contact.send')}
-    </Button>
-    </Box>      
-</form>
-</Box>    
-</div>
-                  
+                <Box mt={2} textAlign="center">
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    disabled={loading}
+                    sx={{ px: 5, py: 1 }}
+                  >
+                    {loading ? (
+                      <CircularProgress size={24} color="inherit" />
+                    ) : (
+                      t("contact.send")
+                    )}
+                  </Button>
+                </Box>
+              </form>
+            </Box>
+          </div>
+        </div>
 
-                  
-                  
-</div>    
+        {/* Contact Info Boxes */}
+        <div className="row information">
+          <div className="col-lg-3">
+            <div className="box">
+              <FaMapMarkerAlt />
+              <h4 className="mb-3">{t("contact.cairoOffice")}</h4>
+              <p>{data.address}</p>
+            </div>
+          </div>
 
-<div className="row information">
-  <div className="col-lg-3">
-    <div className="box">
-        <FaMapMarkerAlt  /> 
-        <h4 className='mb-3'>{t('contact.cairoOffice')}</h4>
-        <p> {data.address} </p>        
-    </div>
-  </div>
+          <div className="col-lg-3">
+            <div className="box aaa">
+              <FaPhoneAlt />
+              <h4 className="mb-3">{t("contact.callUs")}</h4>
+              <a href={`tel:${data.phone}`}>{data.phone}</a>
+            </div>
+          </div>
 
-  <div className="col-lg-3">
-    <div className="box aaa">
-        <FaPhoneAlt  />
-        <h4 className='mb-3'> {t('contact.callUs')}</h4>
-          <a href={`tel:${data.phone}`}> {data.phone}</a>
+          <div className="col-lg-3">
+            <div className="box">
+              <FaEnvelope />
+              <h4 className="mb-3">{t("contact.emailUs")}</h4>
+              <a href={`mailto:${data.email}`}>{data.email}</a>
+            </div>
+          </div>
+
+          <div className="col-lg-3">
+            <div className="box">
+              <MdLocationCity />
+              <h4>{t("contact.followUs")}</h4>
+              <div className="social">
+                {Object.entries(socialIcons).map(([key, Icon]) => {
+                  const url = contactInfo?.[key];
+                  if (!url || url.trim() === "") return null;
+
+                  return (
+                    <li key={key}>
+                      <a href={url} target="_blank" rel="noopener noreferrer">
+                        <Icon size={30} />
+                      </a>
+                    </li>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Map Embed */}
+        <div className="map">
+          <MapEmbed path={data.locationLink} />
+        </div>
       </div>
-  </div>
-
-  <div className="col-lg-3">
-    <div className="box">
-        <FaEnvelope />
-        <h4 className='mb-3'> {t('contact.emailUs')}</h4>
-          <a href={`mailto:${data.email}`}>
-            {data.email}
-          </a>                
-    </div>
-  </div>
-
-<div className="col-lg-3">
-  <div className="box">
-    <MdLocationCity  />
-    <h4 > {t('contact.followUs')}</h4>
-    <div className='social' >
-{Object.entries(socialIcons).map(([key, Icon]) => {
-    const url = contactInfo?.[key];
-
-    // شرط يتحقق إن اللينك مش undefined ومش null ومش فاضي بعد إزالة المسافات
-    if (!url || url.trim() === "") return null;
-
-    return (
-      <li key={key}>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          <Icon size={30} />
-        </a>
-      </li>
-    );
-  })}
-    </div>                              
- </div>
-</div>
-
-</div>                  
-
-<div className="map">
-            <MapEmbed path={data.locationLink} />
-</div>
-
-</div>              
-</section>
-      
-      
-      
-</>
-  );
+    </section>
+  </>
+);
+    
 };
 
 export default ContactForm;

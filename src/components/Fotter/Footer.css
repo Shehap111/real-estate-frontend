@@ -111,6 +111,7 @@
 }
 .last_foot ul li{
     width: 100%;
+    padding: 10px;
 }
 .last_foot{
     overflow: hidden;

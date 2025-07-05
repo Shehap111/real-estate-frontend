@@ -11,11 +11,15 @@ import { Rating } from '@mui/material';
 import { GoArrowRight } from 'react-icons/go';
 import IntroSections from '@/components/IntroSections'; 
 import '../properties/properties.css'
+import {useTranslation} from 'react-i18next';
+
 const FilteredProperties = () => {
   const dispatch = useDispatch();
   const language = useSelector((state) => state.language.language);
   const searchParams = useSearchParams();
   const { publicProperties, loading: loadingProperties } = useSelector((state) => state.property);
+  const {t} = useTranslation()
+  const isArabic = language === 'ar';
 
   const [filters, setFilters] = useState({
     operation: '',
@@ -73,8 +77,11 @@ const FilteredProperties = () => {
   
   return (
     <div>
-      <IntroSections sectionName="Filtered Properties" Link="Properties" path="properties" />
-  
+<IntroSections
+  sectionName={t("filtered.section_title")}
+  Link={t("filtered.breadcrumb")}
+  path="properties"
+/>  
       <section className="properties">
         <div className="container">
           <div className="row">
@@ -82,7 +89,7 @@ const FilteredProperties = () => {
               <div className="col-lg-4 col-md-6" key={p._id}>
                 <div className="box">
                   <div className="image">
-                    <Link href={`/property/${p.slug}`} alt={p.title[language]}>
+                    <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                       <Image
                         src={p.images[0]}
                         alt={p.title[language]}
@@ -94,7 +101,7 @@ const FilteredProperties = () => {
                   </div>
   
                   <div className="box_contant">
-                    <Link href={`/property/${p.slug}`} alt={p.title[language]}>
+                    <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
                       <h4>{p.title[language]}</h4>
                     </Link>
                     <h6>{p.location[language]}</h6>
@@ -104,18 +111,26 @@ const FilteredProperties = () => {
                       <span className="price">
                         ${p.price.toLocaleString()}
                       </span>
-                      <ul>
-                        <Rating
-                          value={p.rating}
-                          precision={0.1}
-                          readOnly
-                        />
-                      </ul>
+                <ul>
+                  <Rating
+                  value={Number(p.rating)}
+                  precision={0.1}
+                  readOnly
+                  sx={{
+                    ...(isArabic && {
+                      transform: 'scaleX(-1)',
+                      direction: 'ltr',
+                    }),
+                    fontSize: 24,
+                    color: '#f5a623',
+                  }}
+                  />
+              </ul>
                     </div>
   
-                    <Link href={`/property/${p.slug}`} alt={p.title[language]}>
-                      MORE DETAILS <GoArrowRight />
-                    </Link>
+                      <Link href={`/properties/${p.slug}`} alt={p.title[language]}>
+                        {t("filtered.more_details")} <GoArrowRight />
+                      </Link>
                   </div>
                 </div>
               </div>
@@ -132,9 +147,7 @@ const FilteredProperties = () => {
                       padding: '2rem 0',
                     }}
                   >
-                    😢 {language === 'ar'
-                      ? 'لا توجد عقارات للإيجار.'
-                      : 'No Filtered  properties found.'}
+                    😢 {t("filtered.no_properties")}
                   </h3>
                 </div>
               )}

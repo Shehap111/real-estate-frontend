@@ -61,19 +61,20 @@ const page = () => {
 
   return (
     <>
-    <IntroSections sectionName='Blogs' path='blog' Link='Blog' /> 
-    <section className='blogs'>
+<IntroSections sectionName={t('blog.section_name')} path='blog' Link={t('blog.link_text')} />
+<section className='blogs'>
       <div className='container'>
           <div className="search">
-            <TextField
-              fullWidth
-              margin="normal"
-              label={t('contact.yourName')}
-              name="name"
-              value={title}
-              onChange={handleSearch}
-              required
-            />
+          <TextField
+            fullWidth
+            margin="normal"
+            label={t('blog.search_label')}
+            name="name"
+            value={title}
+            onChange={handleSearch}
+            required
+          />
+
           </div>
           <div className="row">
             {filteredBlogs.length > 0 ? (
@@ -88,7 +89,9 @@ const page = () => {
                         <h4> {blog.title[language]} </h4>
                         <span> {blog.author} </span>
                         <p>{blog.description[language].slice(0, 110)}...</p>
-                        <Link href={`/blog/${blog.slug}`}> Read </Link>
+                          <Link href={`/blog/${blog.slug}`} alt={blog.title[language]}>
+                            {t('blog.read')}
+                        </Link>
                       </div>                      
                     </div>
                   </div>
@@ -96,8 +99,8 @@ const page = () => {
               })  
             ) : (
               <Alert severity="info" sx={{ mt: 2 }}>
-              {t('blog.noResults') || "لا توجد نتائج مطابقة."}
-            </Alert>
+                <div>{t('blog.noResults')}</div>
+              </Alert>
             )
               
 
@@ -105,13 +108,23 @@ const page = () => {
           </div>
 
           <Pagination
-          count={totalPages}
-          page={currentPage}
-          onChange={(e, value) => setCurrentPage(value)}
-          color="primary"
-          sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}
-/>          
-        
+  count={totalPages}
+  page={currentPage}
+  onChange={(e, value) => setCurrentPage(value)}
+  color="primary"
+  sx={{
+    mt: 3,
+    display: 'flex',
+    justifyContent: 'center',
+    direction: 'rtl',
+    '& .MuiPagination-ul': {
+      flexDirection: 'row-reverse',
+      justifyContent: 'center',
+    },
+  }}
+/>
+       
+          
       </div>
     </section>      
     </>

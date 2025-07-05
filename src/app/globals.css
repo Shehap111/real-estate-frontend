@@ -1,5 +1,6 @@
 @import "bootstrap/dist/css/bootstrap-grid.min.css";
-:root {
+
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');:root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -24,6 +25,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html[dir="rtl"] body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif !important;
+}
+
+html[dir="ltr"] body {
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
 
 * {
   box-sizing: border-box;
@@ -40,4 +49,42 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+html[dir="rtl"] .Section_1 .btn_search {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+html[dir="rtl"] .Section_1 .Select_City .custom-select__control {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+html[dir="rtl"] .Section_1 .custom__textfield .MuiInputBase-root {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+
+
+html[dir="rtl"] .Section_1 .custom__textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-left: none !important;
+}
+
+html[dir="rtl"] .Section_1 .MuiOutlinedInput-root {
+  border-bottom-right-radius: 30px !important;
+  border-top-right-radius: 30px !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+
+html[dir="rtl"] .S3_home .right_box_container .img_cont{
+  margin-right: 0 !important;
+  margin-left: 30px;
 }

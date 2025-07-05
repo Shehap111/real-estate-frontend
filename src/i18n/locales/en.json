@@ -43,7 +43,172 @@
   "created_at": "Created At",
   "map_location": "Map Location",
   "whatsapp_inquiry": "Contact via WhatsApp"
+},
+"home_page": {
+  "home_Section_2": {
+    "title": "Explore Available Property Types",
+    "description": "Browse a wide range of property types to find what suits your needs — from apartments and villas to commercial spaces and lands."
+  },
+  "home_Section_4": {
+    "title": "Top Rated Properties You Can Trust",
+    "description": "Discover the highest-rated properties handpicked by our community. Quality, comfort, and great locations — all in one place.",
+    "more_details": "MORE DETAILS"
+  },
+  "home_Section_5": {
+    "title": "Insights & Trends from the Real Estate World",
+    "description": "Read our latest blog posts covering everything from market analysis to buying strategies and home living tips.",
+    "read": "Read",
+    "no_blogs": "No Blogs",
+    "see_more": "See More"
+  },
+  "home_Section_6": {
+    "title": "Our Impact in Numbers",
+    "description": "Take a quick look at some of our proud achievements and milestones in the real estate market.",
+    "happy_clients": "Happy Clients",
+    "featured_properties": "Featured Properties",
+    "cities_served": "Cities We Serve",
+    "verified_agents": "Verified Agents"
+  },
+  "home_Section_7": {
+    "title": "What Our Clients Say",
+    "description": "Discover the experiences of our valued clients and how we helped them find their perfect property with ease and confidence."
+  }        
+},
+"about_section_1": {
+  "who_we_are": {
+    "title": "Who We Are",
+    "intro": "Welcome to AqarMap – your first platform to explore real estate in Syria, wherever you are in the world.",
+    "sub_1_title": "Our Vision",
+    "sub_1_body": "Our website was created to offer a simple, reliable, and transparent browsing experience for anyone seeking investment opportunities — whether land, apartment, villa, or commercial property, for sale or rent.\nWe believe real estate is not just a structure… it’s an important decision, and it deserves to be accessed with ease, comfort, and confidence.",
+    "sub_2_title": "Our Mission",
+    "sub_2_body": "That’s why we are committed to providing accurate information, clear photos and videos, and complete details for every property.\nWe are here to be the bridge between you and your real estate opportunity back home."
+  },
+  "our_team": {
+    "subtitle": "Our Team",
+    "title": "We Are More Than Just a Company… We Are a Family",
+    "description": "The AqarMap team consists of passionate experts in real estate, technology, and customer service, working together to deliver the best possible experience for our clients inside and outside Syria."
+  }  
+  
+},
+"about_section_2": {
+  "about_title": "Why AqarMap?",
+  "main_heading": "In a market full of randomness and individual efforts, AqarMap was created to be the different model.",
+  "main_paragraph": "We are not freelancers or brokers working independently — we are a real estate company operating within a professional institutional system, led by a team with international experience in managing and developing real estate markets.",
+  "features": {
+    "professional_system": {
+      "title": "Professional Institutional System",
+      "description": "We work within an organized structure that ensures quality and consistent follow-up."
+    },
+    "global_standards": {
+      "title": "Global Standards",
+      "description": "We follow international standards in listing, documentation, and communication to offer a refined and secure experience."
+    },
+    "client_trust": {
+      "title": "Client Trust",
+      "description": "We don’t just sell and disappear — we stay with you with clarity and confidence until you make the right decision, because we believe trust is built, not bought."
+    }
+  },
+  "read_more": "Read More"
+},
+"blog": {
+  "section_name": "Blog",
+  "link_text": "Blog",
+  "search_label": "Search the blog",
+  "read": "Read",
+  "noResults": "No matching results found"
+},
+"single_blog": {
+  "back_to_blogs": "Back to Blog",
+  "author": "Author",
+  "date": "Published on",
+  "description_title": "Description"
+},
+"buy": {
+  "section_title": "Buy",
+  "section_link": "Buy",
+  "more_details": "More Details",
+  "no_properties": "No properties found for sale."
+},
+"rent": {
+  "section_title": "Rent",
+  "section_link": "Rent",
+  "more_details": "More Details",
+  "no_properties": "No properties found for rent."
+},
+"contact": {
+  "sectionTitle": "Contact Us",
+  "breadcrumb": "Contact Us",
+  "getInTouch": "Get in Touch",
+  "teamMessage": "Our team is ready to respond to your inquiries and assist you as soon as possible.",
+  "yourName": "Your Name",
+  "yourEmail": "Your Email",
+  "yourPhone": "Phone Number",
+  "yourMessage": "Your Message",
+  "send": "Send",
+  "cairoOffice": "Our Office",
+  "callUs": "Call Us",
+  "emailUs": "Email Us",
+  "followUs": "Follow Us On"
+},
+"filtered": {
+  "section_title": "Filtered Properties",
+  "breadcrumb": "Properties",
+  "more_details": "More Details",
+  "no_properties": "No filtered properties found."
+},
+"filtered_by_type": {
+  "breadcrumb": "Properties",
+  "more_details": "More Details",
+  "no_properties": "No properties found matching your criteria."
+},
+"properties": {
+  "section_title": "Properties",
+  "breadcrumb": "Properties",
+  "more_details": "More Details",
+  "sort": {
+    "placeholder": "Sort by...",
+    "newest": "Newest First",
+    "oldest": "Oldest First",
+    "low": "Lowest Price",
+    "high": "Highest Price"
+  }
+},
+"single_property": {
+  "breadcrumb": "Properties",
+  "video": "Property Video",
+  "view_360": "360° View",
+  "price": "Price",
+  "egp": "EGP",
+  "operation_type": "Operation Type",
+  "rent": "Rent",
+  "sale": "Sale",
+  "property_type": "Property Type",
+  "city": "City",
+  "bedrooms": "Bedrooms",
+  "bathrooms": "Bathrooms",
+  "area": "Area",
+  "rating": "Rating",
+  "status": "Status",
+  "active": "Active",
+  "inactive": "Inactive",
+  "created_at": "Created At",
+  "map_location": "Map Location",
+  "whatsapp_inquiry": "WhatsApp Inquiry"
+},
+"intro_section":{
+  "home":"Home"  
+},
+"navigation": {
+  "home": "Home",
+  "about": "About",
+  "buy": "Buy",
+  "rent": "Rent",
+  "blog": "Blog",
+  "contact": "Contact"
 }
+
+
+
 
 
 

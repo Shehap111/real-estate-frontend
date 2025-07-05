@@ -12,14 +12,14 @@ import {useTranslation} from 'react-i18next'
 const S2_about = () => {
 
     const {t} = useTranslation();
+
   return (
 <section className='S2_about'>
 <div className='container'>
     <div className='intro'>
-        <span> {t('about_section_1.our_team.subtitle')}  </span>
-        <h3> {t('about_section_1.our_team.title')} </h3> 
-        <p>{t('about_section_1.our_team.description')}</p>          
-
+<span> {t('about_section_1.our_team.subtitle')} </span>
+<h3> {t('about_section_1.our_team.title')} </h3>
+<p> {t('about_section_1.our_team.description')} </p>
     </div>
 
 <div className='row mt-5'>

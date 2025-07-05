@@ -9,11 +9,13 @@ import { getAllCities } from '@/redux/slices/citySlice';
 import { getAllPropertyTypes } from '@/redux/slices/propertyTypeSlice';
 import { getAllProperties } from '@/redux/slices/propertySlice';
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 const Section_1 = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const language = useSelector((state) => state.language.language)
+  const SelectNoSSR = dynamic(() => import('react-select'), { ssr: false });
 
   // Redux Data
   const { list: citiesList } = useSelector(state => state.cities);
@@ -193,7 +195,7 @@ const typeOptions = useMemo(
               </Box>
 
               <Box flex={1}>
-  <Select
+  <SelectNoSSR
     className="Select_City"
     classNamePrefix="custom-select"
     options={cityOptions}
@@ -216,7 +218,7 @@ const typeOptions = useMemo(
 </Box>
 
 <Box flex={1}>
-  <Select
+  <SelectNoSSR
     classNamePrefix="custom-select"
     options={typeOptions}
     value={typeOptions.find(t => t.value === type)}

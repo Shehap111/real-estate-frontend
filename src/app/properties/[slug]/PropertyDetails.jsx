@@ -9,10 +9,14 @@ const PropertyDetails = ({ selectedProperty, cityName, propertyTypeName }) => {
   const { t } = useTranslation();
   const language = useSelector((state) => state.language.language);
 
+  const phoneNumber = "+201552687532";
+  
   const message = language === 'ar'
-  ? `مرحبًا، أرغب في الاستفسار عن العقار: ${selectedProperty?.title?.ar}`
-  : `Hello, I'm interested in the property: ${selectedProperty?.title?.en}`;    
-    
+    ? `مرحبًا، أرغب في الاستفسار عن العقار: ${selectedProperty?.title?.ar}`
+    : `Hello, I'm interested in the property: ${selectedProperty?.title?.en}`;
+  
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      
   return (
     <Box
       className="contant_box"
@@ -30,65 +34,67 @@ const PropertyDetails = ({ selectedProperty, cityName, propertyTypeName }) => {
       <Typography variant="body1" color="text.secondary" mb={3}>
         {selectedProperty?.description?.[language]}
       </Typography>
-
+  
       {/* 📋 بيانات العقار */}
       <Grid container spacing={10}>
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.price')}:
+            {t('single_property.price')}:
           </Typography>
-          <Typography>{selectedProperty?.price} {t('Single-properties.egp')}</Typography>
+          <Typography>
+            {selectedProperty?.price} {t('single_property.egp')}
+          </Typography>
         </Grid>
-
+  
         <Grid item xs={12} sm={6} md={4} lg={12}>
           <Typography variant="subtitle2">
-            {t('Single-properties.operation_type')}:
+            {t('single_property.operation_type')}:
           </Typography>
           <Typography>
             {selectedProperty?.operationType === 'rent'
-              ? t('Single-properties.rent')
-              : t('Single-properties.sale')}
+              ? t('single_property.rent')
+              : t('single_property.sale')}
           </Typography>
         </Grid>
-
+  
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.property_type')}:
+            {t('single_property.property_type')}:
           </Typography>
           <Typography>{propertyTypeName}</Typography>
         </Grid>
-
+  
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.city')}:
+            {t('single_property.city')}:
           </Typography>
           <Typography>{cityName}</Typography>
         </Grid>
-
+  
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.bedrooms')}:
+            {t('single_property.bedrooms')}:
           </Typography>
           <Typography>{selectedProperty?.bedrooms}</Typography>
         </Grid>
-
+  
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.bathrooms')}:
+            {t('single_property.bathrooms')}:
           </Typography>
           <Typography>{selectedProperty?.bathrooms}</Typography>
         </Grid>
-
+  
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.area')}:
+            {t('single_property.area')}:
           </Typography>
           <Typography>{selectedProperty?.area} م²</Typography>
         </Grid>
-
+  
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.rating')}:
+            {t('single_property.rating')}:
           </Typography>
           <Rating
             value={selectedProperty?.rating || 0}
@@ -97,51 +103,53 @@ const PropertyDetails = ({ selectedProperty, cityName, propertyTypeName }) => {
             size="small"
           />
         </Grid>
-
-
-
+  
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="subtitle2">
-            {t('Single-properties.created_at')}:
+            {t('single_property.created_at')}:
           </Typography>
           <Typography>
             {new Date(selectedProperty?.createdAt).toLocaleDateString(language)}
           </Typography>
         </Grid>
       </Grid>
-{/* زرار واتساب */}
-<Box
-  sx={{
-    width: '100%',
-    bgcolor: '#25D366',
-    color: '#fff',
-    textAlign: 'center',
-    py: 1.5,
-    borderRadius: 2,
-    fontWeight: 'bold',
-    fontSize: '16px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 1.2,
-    marginTop: '20px', 
-    transition: '0.3s',
-    '&:hover': {
-      opacity: 0.9,
-    },
-  }}
->
-  <FaWhatsapp size={20} />
-  {t('Single-properties.whatsapp_inquiry')}
-</Box>
+  
+      {/* زرار واتساب */}
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+  <Box
+    sx={{
+      width: '100%',
+      bgcolor: '#25D366',
+      color: '#fff',
+      textAlign: 'center',
+      py: 1.5,
+      borderRadius: 2,
+      fontWeight: 'bold',
+      fontSize: '16px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 1.2,
+      marginTop: '20px',
+      transition: '0.3s',
+      '&:hover': {
+        opacity: 0.9,
+      },
+    }}
+  >
+    <FaWhatsapp size={20} />
+    {t('single_property.whatsapp_inquiry')}
+  </Box>
+</a>
 
+  
       <Divider sx={{ my: 4 }} />
-
+  
       {/* 🗺️ الموقع */}
       {selectedProperty?.mapLocation && (
         <Box>
           <Typography variant="subtitle2" mb={1}>
-            {t('Single-properties.map_location')}:
+            {t('single_property.map_location')}:
           </Typography>
           <Box
             sx={{
@@ -166,6 +174,7 @@ const PropertyDetails = ({ selectedProperty, cityName, propertyTypeName }) => {
       )}
     </Box>
   );
+  
 };
 
 export default PropertyDetails;

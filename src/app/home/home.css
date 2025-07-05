@@ -3,12 +3,14 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 70vh;
+    min-height: 70vh;
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 100px 0;
 }
 .Section_1::after{
     content: '';
@@ -21,13 +23,14 @@
 }
 .Section_1 .box{
     width: 70%;
-    height: 250px;
+    min-height: 250px;
     border-radius: 10px;
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.349);
     display: flex;
     backdrop-filter: blur(8px);
     align-items: center;
+    padding: 25px 0;
     justify-content: center;
 }
 .Section_1 .filters {
@@ -122,29 +125,29 @@
     border: 1px solid #ccc !important;
 }
 
-.Select_City .custom-select__menu {
+.Section_1 .Select_City .custom-select__menu {
     z-index: 9999 !important;
     position: relative; }
 
 /* لما يكون فوكس أو هوفر */
-.custom-select__control--is-focused,
-.custom-select__control:hover {
+.Section_1 .custom-select__control--is-focused,
+.Section_1 .custom-select__control:hover {
     border-color: #ccc !important;
     box-shadow: none !important;
 }
 
 /* شيل البوردر راديوس من اليمين */
-.Select_City .custom-select__control {
+.Section_1 .Select_City .custom-select__control {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
 }
 
 /* شيل فاصل السهم */
-.custom-select__indicator-separator {
+.Section_1 .custom-select__indicator-separator {
     display: none;
 }
 /* هىحعف */
-.custom__textfield .MuiInputBase-root {
+.Section_1 .custom__textfield .MuiInputBase-root {
     height: 40px;
     background-color: #fff;
     padding-top: 4px;
@@ -153,26 +156,26 @@
     border-bottom-right-radius: 0;
 }
 
-.custom__textfield .MuiOutlinedInput-notchedOutline {
+.Section_1 .custom__textfield .MuiOutlinedInput-notchedOutline {
     border-right: 1px solid #ccc;
 }
 
-.custom__textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+.Section_1 .custom__textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
     border-color: #ccc;
 }
 
-.custom__textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+.Section_1 .custom__textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: #ccc;
     border-right: none !important;
 }
 
-.custom__textfield .MuiOutlinedInput-root.Mui-focused {
+.Section_1 .custom__textfield .MuiOutlinedInput-root.Mui-focused {
     box-shadow: none;
     position: relative;
     outline: none;
     z-index: 1;
 }
-.MuiOutlinedInput-root {
+.Section_1 .MuiOutlinedInput-root {
     background-color: #fff !important;
     padding: 0 !important;
     box-shadow: none !important;
@@ -182,10 +185,10 @@
     border-bottom-left-radius: 30px !important;
     border-top-left-radius: 30px !important;
   }
-  .MuiOutlinedInput-root:active{
+  .Section_1  .MuiOutlinedInput-root:active{
     background-color: transparent !important;
   }
-.Mui-focused {
+  .Section_1 .Mui-focused {
       box-shadow: none !important;
       border-color: transparent !important;
       background-color: transparent !important;
@@ -195,8 +198,6 @@
 /* Section_2 */
 .Section_2{
    padding: 70px 0; 
-}
-.Section_2 .box{
 }
 .Section_2 .box .image{
     position: relative;
@@ -460,4 +461,40 @@
 .Section_7 .box p {
     font-size: 16px;
     color: #555;
+}
+/*@media  */
+@media screen and (max-width:1024px) {
+    .Section_1 .box{
+        width: 90% !important;
+        overflow: hidden;
+        margin-top: 40px;
+    }
+.MuiBox-root {
+    width: 100% !important;
+    margin: 5px 0 !important;
+    border-radius: 5px !important;
+}
+.Section_1 .filters_box  .css-13cymwt-control , .Section_1 .filters_box .Select_City .css-13cymwt-control 
+, .css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input , .Section_1 .custom__textfield .MuiInputBase-root{
+    border-radius: 5px !important;
+    border: 1px solid var(--accent-green) !important;
+}
+.Section_1 .btn_search {
+    border-radius: 10px !important;
+    width: 100%;
+    margin-top: 20px;
+}
+.Section_2 .box .image{
+    width: 100%;
+}
+.S3_home .left_box_container .box .small_img{
+    width: 150px !important;
+}
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .S2_about {
+        padding: 70px 10%;
+    }
+
 }

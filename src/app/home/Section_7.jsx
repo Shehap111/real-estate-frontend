@@ -9,6 +9,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import custmer1 from '../../../public/images/S2-about-4.webp';
+import {useTranslation} from 'react-i18next';
 const testimonials = [
     {
       id: 1,
@@ -56,16 +57,20 @@ const testimonials = [
   
 
 const Section_7 = () => {
+    const {t} = useTranslation();
+
+
   return (
 <section className='Section_7'>
 <div className="intro">
-  <h3>What Our Clients Say</h3>
-  <p>Discover the experiences of our valued clients and how we helped them find their perfect property with ease and confidence.</p>
-</div>
+        <h3>{t("home_page.home_Section_7.title")}</h3>
+        <p>{t("home_page.home_Section_7.description")}</p>
+      </div>
     <Box >
       <Swiper
         modules={[Navigation]}
         spaceBetween={30}
+        dir="rtl"  
         slidesPerView={1.2}
         centeredSlides={true}
         loop={true}
