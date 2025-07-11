@@ -5,7 +5,7 @@ import heart from '../../../public/images/success.webp'; // تأكد من مسا
 import Link from 'next/link'; // استخدام Link من next
 import { useTranslation } from 'react-i18next'; // استيراد useTranslation
 import './Footer.css'; 
-
+import whatsapp from '../../../public/images/whatsapp.png'
  // مسار i18n حسب مكان الكمبوننت
 
 const Footer = () => {
@@ -24,7 +24,21 @@ const Footer = () => {
         <div className='Footer'>
             {/* الجزء الثاني من الفوتر */}
             <div className='container'>
+
+            <Link
+                href="https://wa.me/963987654321?text=ممكن%20استفسار"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                <div className="whatsApp_img">
+                    <Image src={whatsapp} alt="contact us on WhatsApp" width={70} height={70} />
+                </div>
+            </Link>
+
+
                 <div className='row foot_contant'>
+
+
 
                     <div className='col-lg-3 col-md-6'>
                         <h3>{t('footer.information')}</h3> {/* الترجمة */}
