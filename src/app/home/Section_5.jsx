@@ -57,7 +57,7 @@ const Section_5 = () => {
 
             }  
           </div>      
-          <Link className='btn_style' href='/properties' alt='Top Rated Properties You Can Trust'>   {t("home_page.home_Section_5.see_more")}          </Link>
+          <Link className='btn_style' href='/properties' alt='Top Blogs You Can Trust'>   {t("home_page.home_Section_5.see_more")}          </Link>
       </div>
     </section>  
   )

@@ -193,7 +193,10 @@
       border-color: transparent !important;
       background-color: transparent !important;
   }
-
+.Select_roomCount{
+    width: 200px !important;
+    margin: auto;
+}
 
 /* Section_2 */
 .Section_2{

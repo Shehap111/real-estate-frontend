@@ -26,6 +26,7 @@ const FilteredProperties = () => {
     areaMin: 0,
     areaMax: Infinity,
     city: '',
+    bedrooms: 0,
     type: '',
     keyword: '',
   });
@@ -42,6 +43,7 @@ const FilteredProperties = () => {
       areaMin: Number(searchParams.get('areaMin') || 0),
       areaMax: Number(searchParams.get('areaMax') || Infinity),
       city: searchParams.get('city') || '',
+      bedrooms: Number(searchParams.get('bedrooms') || 0),
       type: searchParams.get('type') || '',
       keyword: searchParams.get('keyword')?.toLowerCase() || '',
     });
@@ -64,6 +66,12 @@ const FilteredProperties = () => {
           property.propertyTypeId === filters.type ||
           property.propertyTypeId?._id === filters.type;
           
+          const matchBedrooms =
+          filters.bedrooms === 0 ||
+          property.bedrooms === filters.bedrooms ||
+          property.bedrooms === filters.bedrooms;    
+          // filters.bedrooms === 0 || property.bedrooms >= filters.bedrooms;
+
         const matchArea =
           property.area >= filters.areaMin && property.area <= filters.areaMax;
   
@@ -71,7 +79,7 @@ const FilteredProperties = () => {
           filters.keyword === '' ||
           property.title?.[language]?.toLowerCase().includes(filters.keyword);
   
-        return matchOperation && matchCity && matchType && matchArea && matchKeyword;
+        return matchOperation && matchCity && matchType && matchArea && matchKeyword && matchBedrooms ;
       });
   }, [publicProperties, filters, language]);
   

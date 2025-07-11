@@ -1,31 +1,30 @@
 'use client';
 
 import React, { useEffect, useMemo, useState } from 'react';
-import { Box, RadioGroup, FormControlLabel, Radio, Typography, TextField, Button, Slider } from '@mui/material';
-import Select from 'react-select';
+import { Box, RadioGroup, FormControlLabel, Radio, Typography, TextField, Button, Slider, CircularProgress } from '@mui/material';
 import debounce from 'lodash.debounce';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCities } from '@/redux/slices/citySlice';
 import { getAllPropertyTypes } from '@/redux/slices/propertyTypeSlice';
 import { getAllProperties } from '@/redux/slices/propertySlice';
 import { useRouter } from 'next/navigation';
-import dynamic from 'next/dynamic';
+import Select from 'react-select';
 
 const Section_1 = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const language = useSelector((state) => state.language.language)
-  const SelectNoSSR = dynamic(() => import('react-select'), { ssr: false });
 
   // Redux Data
-  const { list: citiesList } = useSelector(state => state.cities);
-  const { list: propertyTypesList } = useSelector(state => state.propertyTypes);
-  const { publicProperties } = useSelector(state => state.property);
+  const { list: citiesList , loading: loadingCities } = useSelector(state => state.cities);
+  const { list: propertyTypesList ,  loading: loadingPropertieTypes } = useSelector(state => state.propertyTypes);
+  const { publicProperties , loading: loadingProperties } = useSelector(state => state.property);
 
   // Filters State
   const [operation, setOperation] = useState('rent');
   const [area, setArea] = useState([10, 2000]);
   const [search, setSearch] = useState('');
+  const [roomCount, setRoomCount] = useState(0);
   const [city, setCity] = useState(null);
   const [type, setType] = useState(null);
 
@@ -57,7 +56,12 @@ const typeOptions = useMemo(
     })),
   [propertyTypesList, language]
 );
-
+const roomOptions = useMemo(() => {
+  return Array.from({ length: 10 }, (_, i) => ({
+    value: i + 1,
+    label: `${i + 1} ${isRTL ? 'غرفة' : 'Room'}${i > 0 ? 's' : ''}`
+  }));
+}, [isRTL]);
 
   // Filtered suggestions from title
   const suggestions = useMemo(() => {
@@ -80,13 +84,41 @@ const typeOptions = useMemo(
       operation,
       areaMin: area[0],
       areaMax: area[1],
-      ...(city && { city: city }),
-      ...(type && { type: type }),
+      ...(city && { city }),
+      ...(type && { type }),
       ...(search && { keyword: search }),
+      ...(roomCount > 0 && { bedrooms: roomCount }),
     }).toString();
-
+  
     router.push(`/filtered-properties?${query}`);
   };
+  
+  const SafeSelect = (props) => {
+    const [mounted, setMounted] = useState(false);
+  
+    useEffect(() => {
+      setMounted(true);
+    }, []);
+  
+    if (!mounted) {
+      return (
+<div
+  style={{
+    height: 40,
+    width: 200,
+    backgroundColor: '#fff',
+    borderRadius: 6,
+    border: '1px solid #ccc',
+    padding: '8px 12px',
+    boxSizing: 'border-box',
+  }}
+> Select </div>
+      ); // Placeholder
+    }
+  
+    return <Select {...props} />;
+  };
+  
 
   return (
     <div className='Section_1'>
@@ -106,7 +138,7 @@ const typeOptions = useMemo(
             }}
           >
             {/* Row 1: Rent/Buy + Area */}
-            <Box className='Rent_Buy' display="flex" flexDirection={{ xs: 'column', md: 'row' }} alignItems="center"  >
+<Box className='Rent_Buy' display="flex" flexDirection={{ xs: 'column', md: 'row' }} alignItems="center"  >
             <RadioGroup
   row
   value={operation}
@@ -126,7 +158,23 @@ const typeOptions = useMemo(
     label={isRTL ? 'بيع' : 'Buy'}
     className={operation === 'sale' ? 'option active' : 'option'}
   />
-</RadioGroup>
+              </RadioGroup>
+              
+<Box flex={1} width={100}>
+<SafeSelect
+  className="Select_roomCount"
+  classNamePrefix="custom-select"
+  options={roomOptions}
+  value={roomOptions.find(r => r.value === roomCount) || null}
+  onChange={(selected) => setRoomCount(selected?.value || 0)}
+  placeholder={isRTL ? 'عدد الغرف' : 'Rooms'}
+  isRtl={isRTL}
+  menuPortalTarget={typeof window !== 'undefined' ? document.body : null}
+  styles={{
+    menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+  }}
+/>
+</Box>              
 
             <Box width={300}>
               <Typography variant="subtitle2" mb={1}>
@@ -141,7 +189,7 @@ const typeOptions = useMemo(
                 max={2000}
               />
             </Box>
-            </Box>
+</Box>
 
             {/* Row 2: Search + City + Type */}
             <Box className="filters_box_row_two"  display="flex" flexDirection={{ xs: 'column', md: 'row' }} >
@@ -194,12 +242,16 @@ const typeOptions = useMemo(
                 )}
               </Box>
 
-              <Box flex={1}>
-  <SelectNoSSR
+<Box flex={1}>
+  <SafeSelect
     className="Select_City"
     classNamePrefix="custom-select"
-    options={cityOptions}
-    value={cityOptions.find(c => c.value === city)}
+    options={
+      cityOptions.length > 0
+        ? cityOptions
+        : [{ label: isRTL ? 'جاري التحميل...' : 'Loading...', value: '' }]
+    }
+    value={cityOptions.find(c => c.value === city) || null}
     onChange={(selected) => setCity(selected?.value || null)}
     placeholder={isRTL ? 'اختر المدينة' : 'Select City'}
     isRtl={isRTL}
@@ -207,21 +259,25 @@ const typeOptions = useMemo(
     styles={{
       menuPortal: (base) => ({
         ...base,
-        zIndex: 13000, // أعلى من MUI drawers/dialogs
+        zIndex: 13000,
       }),
       menu: (base) => ({
         ...base,
-        zIndex: 13000, // تأكيد مضاعف جوه المنيو نفسها
+        zIndex: 13000,
       }),
     }}
   />
 </Box>
 
 <Box flex={1}>
-  <SelectNoSSR
+  <SafeSelect
     classNamePrefix="custom-select"
-    options={typeOptions}
-    value={typeOptions.find(t => t.value === type)}
+    options={
+      typeOptions.length > 0
+        ? typeOptions
+        : [{ label: isRTL ? 'جاري التحميل...' : 'Loading...', value: '' }]
+    }
+    value={typeOptions.find(t => t.value === type) || null}
     onChange={(selected) => setType(selected?.value || null)}
     placeholder={isRTL ? 'نوع العقار' : 'Property Type'}
     isRtl={isRTL}
@@ -233,11 +289,13 @@ const typeOptions = useMemo(
 </Box>
 
 
+
               <Button className='btn_search' variant="contained" onClick={handleSubmit}>
                 {isRTL ? 'بحث' : 'Search'}
               </Button>
             </Box>
           </Box>
+
         </div>
       </div>
     </div>

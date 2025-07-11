@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://real-estate-frontend-tan.vercel.app/
+
+# Sitemaps
+Sitemap: https://real-estate-frontend-tan.vercel.app/sitemap.xml

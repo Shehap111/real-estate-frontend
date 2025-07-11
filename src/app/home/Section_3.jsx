@@ -73,7 +73,7 @@ return (
             </li>
           </ul>
 
-          <Link className='btn_style' href="/about">
+          <Link className='btn_style' href="/about" alt="Read More about us">
             {t('about_section_2.read_more')}
           </Link>
         </div>
