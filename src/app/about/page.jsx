@@ -1,27 +1,32 @@
-import BlogClientWrapper from './BlogClientWrapper';
+import ApoutClientWrapper from './ApoutClientWrapper';
 
 export const metadata = {
-  title: 'مدونة عقاري ماب',
-  description: 'تابع آخر أخبار ونصائح سوق العقارات في سوريا عبر مدونة عقاري ماب.',
+  title: 'من نحن | عقاري ماب',
+  description:
+    'مرحبًا بكم في عقاري ماب – منصتكم الأولى لاستكشاف العقارات في سوريا. نوفر تجربة تصفح موثوقة وبسيطة لكل من يبحث عن فرص استثمارية مثل أرض، شقة، فيلا، أو عقار تجاري للبيع أو الإيجار.',
   keywords: [
-    'مدونة عقاري ماب',
-    'نصائح عقارية',
-    'أخبار العقارات',
-    'الاستثمار العقاري',
+    'عقاري ماب',
     'عقارات سوريا',
+    'بيع شقق',
+    'إيجار فيلا',
+    'عقار تجاري',
+    'عقارات للاستثمار',
+    'شراء أرض في سوريا',
+    'منصة عقارية',
   ],
-  canonical: 'https://yourdomain.com/blog',
+  canonical: 'https://yourdomain.com/about',
   openGraph: {
-    title: 'مدونة عقاري ماب',
-    description: 'تابع آخر أخبار ونصائح سوق العقارات في سوريا عبر مدونة عقاري ماب.',
-    url: 'https://yourdomain.com/blog',
+    title: 'من نحن | عقاري ماب',
+    description:
+      'اكتشف معنا فرصك العقارية في سوريا بكل سهولة وثقة. عقاري ماب هو دليلك للاستثمار العقاري الذكي.',
+    url: 'https://yourdomain.com/about',
     siteName: 'AqariMap',
     locale: 'ar_SY',
     type: 'website',
-    // image: 'https://yourdomain.com/og-image-blog.jpg', // لو عندك صورة og
+    // image: 'https://yourdomain.com/og-image.jpg', 
   },
 };
 
-export default function BlogPage() {
-  return <BlogClientWrapper />;
+export default function AboutPage() {
+  return <ApoutClientWrapper />;
 }
